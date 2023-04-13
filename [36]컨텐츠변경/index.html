@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>홈</title>
+      <link rel="stylesheet" href="http://wooreeweb.com/cdn/gt-grid.min.css"> <!-- jQuery -->
+      <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+      <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+      <script>
+            $(function () {
+                  //안정적인 방식
+                  $('#container').load('main.html');
+                  var nav = $('nav li');
+                  nav.eq(0).click(function () {
+                        $('#container').load('main.html');
+                  }); //첫번째 꺼 클릭을 하면 내용을 바뀜
+                  nav.eq(1).click(function () {
+                        $('#container').load('sub1.html');
+                  });
+                  // 컨텐츠 파일이 con1.html, con2.html,... 이라면 
+                  // nav.click( function () { 
+                  //   var i = $( this ).index(); 
+                  //   $( '#container' ).load( 'con' + (i + 1) + '.html'); 
+                  // } ); 
+            });
+      </script>
+</head>
+
+<body>
+      <div class="wrap">
+            <!-- 헤더 -->
+            <div id="headerWrap">
+                  <div id="logo">로고</div>
+                  <nav>
+                        <ul>
+                              <li>main.html</li>
+                              <li>sub.html</li>
+                              <li>메뉴3</li>
+                              <li>메뉴4</li>
+                              <li>메뉴5</li>
+                        </ul>
+                  </nav>
+            </div>
+            <!-- 컨텐츠 -->
+            <div id="container">
+                  메인 페이지의 컨텐츠 영역
+            </div>
+            <!-- 푸터 -->
+            <div id="footerWrap">
+                  <footer>
+                        <p>&copy; myweb</p>
+                  </footer>
+            </div>
+      </div>
+</body>
+
+</html>

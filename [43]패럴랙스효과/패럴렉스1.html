@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>패럴랙스(parallax)</title>
+  <style> 
+  .content{
+    height: 1000px;
+    /* 스크롤 주제 */
+    font-size: 2rem;
+    background-color: rgba(0, 255, 0, 0.1);
+  }
+  </style>
+  <style>
+    .prx{
+      /* 배경이미지 사용 */
+      background-image: url('http://wooreeweb.com/img/bg-1.jpg');
+
+      /* 영역 높이 지정 */
+      height: 500px;
+
+      /* 패럴랙스 스크롤 효과를 위한 스타일 */
+      background-attachment: fixed; /* 영역고정 */  
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <h2>패럴랙스 스크롤 효과</h2>
+  <div class="prx"></div>
+  <div class="content">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae itaque consectetur at laboriosam, mollitia illum quia, fuga dicta laborum odit voluptatum nemo pariatur rerum? Ipsam autem voluptas eaque debitis asperiores.
+  </div>
+</body>
+</html>

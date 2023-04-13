@@ -1,0 +1,31 @@
+*{margin: 0; padding: 0;}
+a{color: #222; text-decoration: none;}
+li{list-style: none;}
+img{outline: none;}
+
+html{
+  font-size: 14px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* 아이폰 아이패드 고해상도 디스플레이에서 폰트 깨지는 거 방지 */
+}
+
+body *{box-sizing: border-box;}
+
+.clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 전체영역 */
+.wrap{
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* 컨텐츠영역 */
+.container{
+  background-color: #eee;
+  color: #333;
+  padding: 300px;
+}

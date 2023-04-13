@@ -1,0 +1,31 @@
+*{margin: 0; padding: 0;}
+a{color: #222; text-decoration: none;}
+li{list-style: none;}
+img{outline: none;}
+
+html{
+  font-size: 14px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body *{box-sizing: border-box;}
+
+.clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 전체영역 */
+.wrap{
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* 컨텐츠영역 */
+.container{
+  background-color: #eee;
+  color: #333;
+  padding: 300px;
+}

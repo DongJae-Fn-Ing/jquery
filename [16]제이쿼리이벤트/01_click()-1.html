@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>click</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+      // $(선택자).이벤트(function(){});
+      $("button").click(function(){
+        $("img").attr("src", "http://wooreeweb.com/img/h02.jpg") // attr 속성 겟터 역활
+      }); //버튼 클릭시 이미지가 바뀐다.
+      // $("선택자").이벤트명(함수);
+      //$("선택자").이벤트명(function(){이벤트 발생시 실행할 내용});
+      //.attr("속성명") : 해당 속성 가져오기
+      //.attr("속성명", "값") : 해당 속성을 값으로 적용하기
+    });
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <p><img src="http://wooreeweb.com/img/h01.jpg"></p>
+  <hr>
+  <button>jQuery 실행 결과 확인</button>
+</body>
+</html>

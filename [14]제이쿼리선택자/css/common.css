@@ -1,0 +1,13 @@
+/* /css/common.css */
+
+div,
+  p{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 10px;
+    border: 1px solid;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 100px;
+  }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=!, initial-scale=1.0">
+  <title>html</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+
+  var box1 = $(".box:first").html();//<em>1</em> 첫번째 박스의 html 내용을 가져와라
+  $(".box:nth-child(2)").text(box1);  // 2번째 박스는 텍스트
+  $(".box:nth-child(3)").html(box1); // 3번째 박스는 html태그로 적용
+});
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.html()</h2>
+  <hr>
+  <div class="clear">
+    <div class="box"><em>1</em></div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>

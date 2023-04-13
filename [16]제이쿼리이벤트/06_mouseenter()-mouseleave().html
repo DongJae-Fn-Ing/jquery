@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mouseenter()-mouseleave()</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+  //호버 기능하고 같이 봐야한다.
+  $("p").mouseenter(function(){ // 마우스 엔터 마우스가 들어가면
+    $(this).css("background-color", "crimson");
+  });
+  $("p").mouseleave(function(){ // 마우스가 나가면
+    $(this).css("color","white").text("BYE!"); //.text 헤당 선택자의 글자 쓸 때 글자쓰는 메소드
+  });
+  //자식 영역에서는이벤트가 발생하지 않는다.
+  //부모 영역에서 발생한 이벤트는 자식 영역으로 이동해도 다시 실행되지 않는다. 
+});
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>/.mouseenter() / .mouseleave()</h2>
+  <hr>
+  <p class="pa">p.pa</p>
+  <p id="pa">p#pa</p>
+  <p class="pb">p.pb</p>
+  <hr>
+  <button>위 요소에 마우스 호버</button>
+</body>
+</html>

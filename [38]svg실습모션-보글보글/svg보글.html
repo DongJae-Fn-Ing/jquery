@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>보글보글</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    .wrap {
+      height: 100%;
+    }
+
+    .p1 {
+      height: 100%;
+      background-image: url('http://wooreeweb.com/img/bg-6.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <script src="js/bb.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- 1페이지 + 애니메이션 영역 -->
+    <div id="fullbg" class="p1">
+      <canvas id="bb"></canvas> <!-- 자바스크립트로 그림을 그리는 것 -->
+    </div>
+
+    <!-- 2페이지 컨텐츠 -->
+    <div class="p2"></div>
+    <h2>페이지 컨텐츠</h2>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slippry</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- slippry.js 추가 -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slippry/1.4.0/slippry.min.css' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/slippry/1.4.0/slippry.min.js'></script>
+  <script>
+    $(function () {
+      // 슬라이드로 실행할 영역을 변수로 지정 
+      var $slide = $('#gallery');
+      // 실행 
+      var gal = $slide.slippry();
+    });
+    //이미지를 본 사이트에서 다운 받아서 쓰는 게 좋다
+  </script>
+</head>
+
+<body>
+  <section class="slide-wrap">
+    <article>
+      <h2>반응형 갤러리 - slipry</h2>
+      <hr>
+      <!-- 이미지 슬라이드 -->
+      <ul id="gallery">
+        <li><a href="#slide1"><img src="http://wooreeweb.com/img/bg-1.jpg" alt=""></a></li>
+        <li><a href="#slide2"><img src="http://wooreeweb.com/img/bg-2.jpg" alt=""></a></li>
+        <li><a href="#slide3"><img src="http://wooreeweb.com/img/bg-3.jpg" alt=""></a></li>
+        <li><a href="#slide4"><img src="http://wooreeweb.com/img/bg-4.jpg" alt=""></a></li>
+      </ul>
+    </article>
+  </section>
+</body>
+
+</html>

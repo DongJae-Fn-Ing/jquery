@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>컨텐츠의 동적 변경</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <style>
+    .txt {
+      width: 200px;
+      height: 100px;
+      border: 1px solid;
+      margin: 20px;
+      color: crimson;
+      font-size: 20px;
+      text-align: center;
+      line-height: 5;
+    }
+  </style>
+  <script>
+    $(function () {
+      $('button').click(function () {
+        $('#con').load('ajaxcon.txt');
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="con">
+    <h2>Ajax 기법을 활용한 동적 변경</h2>
+    <hr>
+    <div class="txt">최초 컨텐츠</div>
+  </div>
+  <button>동적 변경 실행</button>
+  앵커 태그와 다르게 url이 변경 x 내용만 바뀜
+  <!-- 무한스크롤 기법 -->
+  <!-- 인스타 기법 -->
+</body>
+
+</html>

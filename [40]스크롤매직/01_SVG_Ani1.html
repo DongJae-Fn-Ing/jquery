@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SVG Animation</title>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    svg {
+      width: 800px;
+      height: 550px;
+    }
+  </style>
+  <script>
+
+    //일러스트로 그림을 그리고
+    /* svg 저장하기 하면 svg코드 보기 버튼을 클릭하여
+    svg ver여기부터 복사를 하여 붙여 넣는다 */
+    $(function () {
+      function pathPrepare($el) {
+        var linelength = $el[0].getTotalLength();
+        $el.css('stroke-dasharray', linelength); //스토로크 속성
+        $el.css('stroke-dashoffset', linelength); //css 스트로크 속성
+      }
+      //path 변수 지정 
+      var $line = $('path#line'); //패스태그 가져오기
+      //SVG 준비 
+      pathPrepare($line);
+
+      //스크롤매직 플러그인 초기화 
+      var controller = new ScrollMagic.Controller();
+      
+      //트위닝 애니메이션 
+      var tween = new TimelineMax()
+        .add(TweenMax.to($line, 1.5, {
+          strokeDashoffset: 0,
+          ease: Linear.easeNone //트윈맥스가 가지고 있는 이징 속성
+        }))// 먼저 그리고
+        .add(TweenMax.to('path', 2.5, {
+          stroke: '#ff0000',
+          ease: Linear.easeNone
+        })) //추가로 실행 색상이 바뀐다
+    });
+  </script>
+</head>
+
+<body>
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg">
+    <path id="line" style="stroke-linecap: round; stroke-linejoin: round;" fill="none" stroke="#33629c" stroke-width="5"
+      d="M96,253c0,0,10-11,81-11c0,0,11,13,96,0c0,0,76-12,131,38c0,0,131,74,229,52c0,0,85-22,131-13" />
+  </svg>
+</body>
+
+</html>

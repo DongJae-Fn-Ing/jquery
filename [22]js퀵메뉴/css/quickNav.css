@@ -1,0 +1,31 @@
+/* css/quickNav.css */
+#qm {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  background-color: #111;
+}
+
+#qm li a {
+  display: block;  /* 블록을 잡아야 부모영역과 크기가 맞춰짐 */
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+#qm li:last-child a {
+  border-bottom: none;
+}
+
+#qm li a:hover,
+#qm li a:focus {
+  background-color: darkorange;
+}
+
+#qm li a.on {
+  background-color: orangered;
+  font-weight: bold;
+}
+/* 태그와 함께 클래스를 부여하는 경우에는 클래스를 줬다 뻈다 한다. */

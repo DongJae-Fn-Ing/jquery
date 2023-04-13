@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=!, initial-scale=1.0">
+  <title>prepend - append</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+//안으로 들어가서 앞뒤
+  var box1 = $(".box:first"); //박스1 변수에 첫번째 박스를 저장을 하고
+  box1.prepend("<em>앞에</em>") //prepend 앞에 ""안의 내용 추가 // 선택자 안으로 들어가서 맨 안에 삽입
+  box1.append("<em>뒤에</em>") //append 뒤에 ""안의 추가 // 선택자 안으로 들어가서 맨 뒤로 삽입해라
+})
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.prepend() / .append()</h2>
+  <hr>
+  <div class="clear">
+    <div class="box"><strong>1</strong></div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>

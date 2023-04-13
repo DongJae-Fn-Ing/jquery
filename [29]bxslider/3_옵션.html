@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bxSlider</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- bxSlider 추가 -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js'></script>
+  <script>
+    $(function () {
+      $('.slide').bxSlider({
+        captions: true, //슬라이드 캡션 
+        mode: 'horizontal', //슬라이드 형태('horizontal', 'vertical', 'fade') 
+        auto: true, //자동 슬라이드 
+        autoControls: false, //재생관련 컨트롤 
+        slideWidth: 400, //슬라이드 너비 
+        speed: 600, //슬라이드 트랜지션 시간(500) 
+        startSlide: 2, //시작할 슬라이드 INDEX(0) 
+        hideControlOnEnd: true, //무한 반복 해제시 처음 및 마지막 이미지에서 <> 숨기기 
+        infiniteLoop: true, //무한 반복 여부 
+        randomStart: true, //무작위 시작 
+        touchEnabled: false, //터치 기능 사용 여부 
+        autoHover: true, //호버시 슬라이드 중지 
+        minSlides: 1, //최소 이미지 개수 
+        maxSlides: 3, //최대 이미지 개수 
+        shrinkItems: true, //뷰포트에 맞추어 슬라이드 줄이기 
+        video: false, //fitvids.js 추가시 동영상 슬라이드 사용 가능 
+      });
+    });
+  </script>
+  <style>
+    .cap {
+      position: absolute;
+      left: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mainSlide">
+    <ul class="slide">
+      <li>
+        <div class="cap">
+          <h2>캡션 삽입</h2>
+        </div>
+        <img src="http://wooreeweb.com/img/bg-1.jpg" alt="" title="이미지캡션1">
+      </li>
+      <li>
+        <img src="http://wooreeweb.com/img/bg-2.jpg" alt="" title="이미지캡션2">
+      </li>
+      <li>
+        <img src="http://wooreeweb.com/img/bg-3.jpg" alt="" title="이미지캡션3">
+      </li>
+      <li>
+        <img src="http://wooreeweb.com/img/bg-4.jpg" alt="" title="이미지캡션4">
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

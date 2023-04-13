@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>on</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+<script>
+  $(function(){
+
+    $("p").on({
+      mouseover: function(){
+        $(this).css("background-color", "yellowgreen");
+      },
+      mouseout: function(){
+        $(this).css("background-color", "gold");
+      },
+      click: function(){
+        $(this).css("background-color", "skyblue");
+      }
+    });
+  });
+</script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.on()-2</h2>
+  <hr>
+  <p class="pa">p.pa</p>
+  <p id="pa">p#pa</p>
+  <p class="pb">p.pb</p>
+  <hr>
+  <button>위 요소 클릭</button>
+</body>
+</html>

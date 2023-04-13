@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>반</title>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="js/progressbar.min.js"></script>
+  <style>
+    #hCircleBox {
+      margin: 20px;
+      width: 200px;
+      height: 100px;
+      /*높이 절반*/
+    }
+  </style>
+  <script>
+    $(function () {
+      var bar = new ProgressBar.SemiCircle(hCircleBox, {
+        strokeWidth: 6,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        svgStyle: null
+      });
+      bar.animate(1.0); // 0.0(0%)~1.0(100%) 
+    });
+  </script>
+</head>
+
+<body>
+  <div id="hCircleBox"></div>
+</body>
+
+</html>

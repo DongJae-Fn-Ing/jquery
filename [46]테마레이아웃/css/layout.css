@@ -1,0 +1,488 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+
+/*  Reset CSS  */
+
+
+/* 실무테스트 */
+/* 나중에 서버에서 반영이 안될 때 실제로 내가 만든 페이지가 있는데
+이 파일을 서버 쪽으로 넘겨주는데 클라이언트 피씨에서 확인을 위해 다운을 받고
+확인을 하려고 하지만  서버에서 수정을 했는데 수정한게 클라이언트 컴에서 안보이는 경우가 
+있다 그럴 경우
+내가 갱신을 계속하고자 하면 html에서 
+쿼리 셀렉터를 넣어주고 날짜와 버전을 입력해준다 */
+/* <link rel="stylesheet" href="css/layout.css?210604"> 이런식으로 */
+/* 스크립트 파일도 마찬가지 제이쿼리나*/
+/* 이런식으로 버전관리를 해준다 */
+/* <script src="js/custom.js" defer></script> */
+/* 자바스크립트 동기화 로드를 하고 불러온다 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+  color: #555;
+}
+
+img {
+  border: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+body {
+  font-family: orbitron;
+}
+
+/*전체 프레임*/
+#wrap {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 1400px;
+  min-height: 780px;
+  /* 기준 사이즈보다 작아지면 짤린다 */
+  /* 중요 */
+  background-image: url(../images/bg_morning.jpg);
+  background-size: cover;
+  transition: all 2s;
+}
+
+/*로고*/
+#logo {
+  position: fixed;
+  top: 30px;
+  left: 60px;
+  width: 90px;
+  height: 80px;
+  background-image: url(../images/logo_b.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*주메뉴*/
+#gnb {
+  position: fixed;
+  top: 50px;
+  right: 200px;
+}
+
+#gnb li {
+  float: left;
+  margin-left: 30px;
+}
+
+#gnb li a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+/*sns버튼*/
+#sns {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+}
+
+#sns li {
+  float: left;
+  margin-left: 20px;
+}
+
+#sns li i {
+  font-size: 18px;
+  color: #555;
+}
+
+/*텍스트 박스*/
+.slogan {
+  position: absolute;
+  top: 350px;
+  left: 150px;
+  width: 450px;
+}
+
+.slogan p {
+  font-size: 50px;
+  color: #666;
+}
+
+.slogan p strong {
+  color: #111;
+}
+
+.slogan em {
+  font-size: 14px;
+  font-style: normal;
+  /* //이탤릭이 기본이라 노멀 설정 */
+  color: #333;
+}
+
+/*아이폰*/
+figure {
+  position: absolute;
+  top: 200px;
+  right: -300px;
+  /* 이미지를 잘라주기 위해서 오른쪽으로 내보냄 */
+  width: 1226px;
+  height: 809px;
+  background-image: url(../images/phone_morning.png);
+  transition: all 2s;
+}
+
+figure p {
+  position: absolute;
+  top: 100px;
+  left: 137px;
+  width: 540px;
+  height: 307px;
+  overflow: hidden;
+  font-size: 60px;
+  font-weight: bold;
+  color: #333;
+  line-height: 4.6;
+  padding-left: 50px;
+}
+
+figure p span {
+  position: relative;
+  z-index: 50;
+}
+
+/*테마 버튼*/
+nav {
+  position: fixed;
+  bottom: 70px;
+  left: 6%;
+  width: 88%;
+}
+
+nav li {
+  float: left;
+  width: 25%;
+}
+
+nav li a {
+  display: block;
+  width: 98%;
+  height: 35px;
+  background: #fff;
+  color: #111;
+  margin: 0 auto;
+  transition: all 0.5s;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 3;
+  letter-spacing: 3px;
+  padding-left: 30px;
+  opacity: 0.6;
+  z-index: 10;
+  position: relative;
+}
+
+nav li:hover a {
+  background: #111;
+  color: #ddd;
+  opacity: 0.9;
+}
+
+/*배경 구름*/
+#wrap>img:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: -1146px;
+  animation: ani1 110s linear infinite;
+  opacity: 0.8;
+}
+
+#wrap>img:nth-child(2) {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  animation: ani2 100s linear infinite;
+  opacity: 0.8;
+}
+
+/*모바일 구름*/
+figure p img.cl1 {
+  position: absolute;
+  top: 30px;
+  left: -600px;
+  width: 600px;
+  height: auto;
+  z-index: 40;
+  animation: ani3 110s linear infinite;
+}
+
+figure p img.cl2 {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  width: 700px;
+  height: auto;
+  z-index: 40;
+  animation: ani4 100s linear infinite;
+}
+
+/*구름 모션*/
+@keyframes ani1 {
+  0% {
+    left: -1146px;
+  }
+
+  100% {
+    left: 1950px;
+  }
+}
+
+@keyframes ani2 {
+  0% {
+    left: 0px;
+  }
+
+  50% {
+    left: 1950px;
+    opacity: 0;
+  }
+
+  50.001% {
+    left: -1840px;
+    opacity: 0.8;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes ani3 {
+  0% {
+    left: -600px;
+  }
+
+  100% {
+    left: 540px;
+  }
+}
+
+@keyframes ani4 {
+  0% {
+    left: 0px;
+  }
+
+  50% {
+    left: 540px;
+    opacity: 0;
+  }
+
+  50.001% {
+    left: -700px;
+    opacity: 1;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+/*아침 테마*/
+#wrap.morning {
+  background-image: url(../images/bg_morning.jpg);
+}
+
+#wrap.morning #logo {
+  background-image: url(../images/logo_b.png);
+}
+
+#wrap.morning #gnb a {
+  color: #555;
+}
+
+#wrap.morning #sns i {
+  color: #555;
+}
+
+#wrap.morning figure {
+  background-image: url(../images/phone_morning.png);
+}
+
+#wrap.morning article p {
+  color: #666;
+}
+
+#wrap.morning article p strong {
+  color: #111;
+}
+
+#wrap.morning article em {
+  color: #333;
+}
+
+#wrap.morning figure p {
+  color: #333;
+}
+
+#wrap.evening>img:nth-child(1),
+#wrap.evening>img:nth-child(2) {
+  opacity: 1;
+}
+
+/*오후 테마*/
+#wrap.afternoon {
+  background-image: url(../images/bg_afternoon.jpg);
+}
+
+#wrap.afternoon #logo {
+  background-image: url(../images/logo_b.png);
+}
+
+#wrap.afternoon #gnb a {
+  color: #555;
+}
+
+#wrap.afternoon #sns i {
+  color: #555;
+}
+
+#wrap.afternoon figure {
+  background-image: url(../images/phone_afternoon.png);
+}
+
+#wrap.afternoon article p {
+  color: #666;
+}
+
+#wrap.afternoon article p strong {
+  color: #111;
+}
+
+#wrap.afternoon article em {
+  color: #333;
+}
+
+#wrap.afternoon figure p {
+  color: #333;
+}
+
+#wrap.evening>img:nth-child(1),
+#wrap.evening>img:nth-child(2) {
+  opacity: 1;
+}
+
+
+/*저녁 테마*/
+#wrap.evening {
+  background-image: url(../images/bg_evening.jpg);
+}
+
+#wrap.evening #logo {
+  background-image: url(../images/logo_w.png);
+}
+
+#wrap.evening #gnb a {
+  color: #fff;
+}
+
+#wrap.evening #sns i {
+  color: #fff;
+}
+
+/*밤 테마*/
+
+#wrap.night {
+  background-image: url(../images/bg_night.jpg);
+}
+
+#wrap.night #logo {
+  background-image: url(../images/logo_w.png);
+}
+
+#wrap.night #gnb a {
+  color: #fff;
+}
+
+#wrap.night #sns i {
+  color: #fff;
+}
+
+#wrap.night figure {
+  background-image: url(../images/phone_night.png);
+}
+
+#wrap.night article p {
+  color: #bbb;
+}
+
+#wrap.night article p strong {
+  color: #fff;
+}
+
+#wrap.night article em {
+  color: #888;
+}
+
+#wrap.night figure p {
+  color: #fff;
+}
+
+#wrap.night>img:nth-child(1),
+#wrap.night>img:nth-child(2) {
+  opacity: 0.1;
+}
+
+#wrap.night figure p img.cl1 {
+  opacity: 0.4;
+}
+
+#wrap.night figure p img.cl2 {
+  opacity: 0.4;
+}
+
+#wrap.evening figure {
+  background-image: url(../images/phone_evening.png);
+}
+
+#wrap.evening article p {
+  color: #444;
+}
+
+#wrap.evening article p strong {
+  color: #fff;
+}
+
+#wrap.evening article em {
+  color: #333;
+}
+
+#wrap.evening figure p {
+  color: #fff;
+}
+
+#wrap.evening>img:nth-child(1),
+#wrap.evening>img:nth-child(2) {
+  opacity: 0.6;
+}

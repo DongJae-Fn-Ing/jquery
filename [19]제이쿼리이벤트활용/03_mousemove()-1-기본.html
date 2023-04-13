@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mousemove()</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function () {
+      $('html, body').mousemove(function (e) {//브라우저 안에서만 이동을 했을 때 발생하는 좌표값
+        var x = e.pageX; //현재페이지의 x좌표
+        var y = e.pageY; //현재 페이지의 y좌표
+        $('body').html('<h2>' + x + ' x ' + y);
+      });
+    });
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+* { margin: 0; padding: 0; } 
+a { text-decoration: none; color: #222; } 
+li { list-style: none; } 
+body { background-color: #eee; }
+
+/* 배너 */ 
+.banner-wrap { 
+  position: relative; 
+  width: 300px; 
+  height: 100px; 
+  top: 100px; 
+  margin: 0 auto; 
+  border: 1px solid #fff; 
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); 
+  }
+
+/* 배너이미지 */
+
+.banner-wrap ul.banner li {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+.banner-wrap ul.banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 인디케이터 */
+.banner-wrap label {
+  position: relative;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  background-color: #fff;
+  display: block;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* 라디오버튼 숨기기 */
+.banner-wrap input {
+  display: none;
+}
+
+.banner-wrap .banner-input1:checked ~ .btn1,
+.banner-wrap .banner-input2:checked ~ .btn2,
+.banner-wrap .banner-input3:checked ~ .btn3,
+.banner-wrap .banner-input4:checked ~ .btn4 {
+  background-color: #09f;
+  color: #fff;
+}
+
+
+/* 배너 이미지 보이기 */
+
+.banner-wrap .banner-input1:checked~.banner li:nth-child(1),
+.banner-wrap .banner-input2:checked~.banner li:nth-child(2),
+.banner-wrap .banner-input3:checked~.banner li:nth-child(3),
+.banner-wrap .banner-input4:checked~.banner li:nth-child(4) {
+  left: 0;
+  transition: all 0.6s ease-in-out;
+  animation: none;
+}
+
+/* 애니메이션 */
+@keyframes slideLeft {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+
+/* 현재 이미지를 왼쪽으로 슬라이딩 */
+.banner-wrap input:checked~.banner li {
+  animation: slideLeft 0.6s ease-in-out;
+}

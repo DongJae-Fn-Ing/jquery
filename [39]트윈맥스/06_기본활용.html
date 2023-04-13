@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트윈맥스</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: #f0f;
+      position: relative;
+      font-size: 50px;
+      text-align: center;
+      line-height: 100px;
+      border-radius: 10px;
+    }
+  </style>
+  <script>
+    $(function () {
+      $('body').html('<button>시작</button>');
+      $('body').append('<div>0</div>');
+      var bo = $('div');
+      var btn = $('button');
+      var count = 0;
+      btn.click(function () {
+        var tween = TweenMax.to(bo, 3, {
+          left: '500px',
+          repeat: 10,
+          yoyo: true,
+          repeatDelay: 1,
+          onRepeat: r //함수 반복 할 때마다
+        });
+
+        function r() {
+          count++;
+          bo.html(count);
+          TweenLite.set(bo, { //set 설정
+            // backgroundColor: "hsl(200, 90%, 70%)" 
+            backgroundColor: "hsl(" + Math.random() * 360 + ", 90%, 70%)"
+          });
+        }
+      });
+      btn.click();
+    });
+  </script> </head> 
+<body> 
+</body> 
+</html> 

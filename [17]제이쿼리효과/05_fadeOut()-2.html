@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fadeOut</title>
+  <style>
+  .box{
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    margin: 10px;
+    display: none;
+  }
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $("#fIn").click(function(){
+         $(".box").fadeIn(1000, function(){
+        var dis = $(this).css("display");
+        var opa = $(this).css("opacity");
+        alert("display:" + dis + "\nopacity: " + opa);
+         });
+      });
+
+      $("#fOut").click(function(){
+        $(".box").fadeOut(1000, function(){
+        var dis = $(this).css("display");
+        var opa = $(this).css("opacity"); //애초에 오퍼시티가 없어서 자동으로 1로 설정이고
+        //여기서 0으로 설정
+        // 그다음 디스플레이 논으로 바뀌고
+        //오퍼서티가 기본 값으로 돌아가고 1로 복귀를 한다.
+        alert("display:" + dis + "\nopacity: " + opa);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="fIn">.fadeIn()</button>
+  <button id="fOut">.fadeOut()</button>
+  <hr>
+  <div class="clear">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slippry</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- slippry.js 추가 -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slippry/1.4.0/slippry.min.css' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/slippry/1.4.0/slippry.min.js'></script>
+  <script>
+    $(function () {
+      // 슬라이드로 실행할 영역을 변수로 지정 
+      var $slide = $('#gallery');
+      // 실행 
+      var gal = $slide.slippry();
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .slide-wrap {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    /* 미디어쿼리 */
+    @media screen and (max-width: 960px) {
+      .slide-wrap {
+        width: 70%;
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      .slide-wrap {
+        width: 80%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .slide-wrap {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="slide-wrap">
+    <article>
+      <h2>반응형 갤러리 - slipry - 캡션</h2>
+      <hr>
+      <!-- 이미지 슬라이드 -->
+      <ul id="gallery">
+        <li><a href="#slide1"><img src="http://wooreeweb.com/img/bg-1.jpg" alt=""></a></li>
+        <li><a href="#slide2"><img src="http://wooreeweb.com/img/bg-2.jpg" alt=""></a></li>
+        <li><a href="#slide3"><img src="http://wooreeweb.com/img/bg-3.jpg" alt="캡션 삽입은 여기 
+에..."></a></li>
+        <li><a href="#slide4"><img src="http://wooreeweb.com/img/bg-4.jpg" alt="<a 
+href=http://wooreeweb.com>우리웹"></a></li>
+      </ul>
+    </article>
+  </section>
+</body>
+
+</html>

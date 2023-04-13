@@ -1,0 +1,116 @@
+img{
+  width: 300px;
+  display: flex;
+}
+
+p{
+  width: 160px;
+  height: 160px;
+  line-height: 10;
+  background-color: gold;
+  display: inline-flex;
+  justify-content: center;
+}
+
+
+button{
+  display: flex;
+}
+
+.img-wrap ul{
+  width: 300px;
+}
+
+.img-wrap li{
+list-style: none;
+width: 30px;
+height: 30px;
+float: left;
+margin: 5px;
+border: 1px solid #555;
+}
+
+.img-wrap li a{
+  text-decoration:  none;
+  color: #555;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}
+.img-wrap ul:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+html{
+  font-size: 16px;
+  line-height: 1.5;;
+}
+
+body *{
+  box-sizing: border-box;
+}
+div:not(.clear){
+  width: 20%;
+  height: 100px;
+  line-height: 5;
+  text-align: center;
+  float: left;
+  background-color: skyblue;
+  margin: 10px;
+  padding: 10px; 
+}
+
+div.box{
+  width: 100px;
+  text-align: center;
+  background-color: gold;
+  float: left;
+}
+
+.clear{
+  border: 1px solid red;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+div.black{
+  border: 3px solid black;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  background-color: lightgrey;
+}
+
+div.container{
+  width: 80%;
+  height: auto;
+  padding: 10px;
+  background-color: lavender;
+}
+
+div.clear p{
+  background-color: yellowgreen;
+  line-height: 3;
+  height: 50px;
+  padding-top: 1px;
+}
+
+div.pink{
+  background-color: pink;
+  width: 100px;
+  height: 100px;
+  line-height: 5;
+  margin: 10px;
+}
+
+div.box:after,
+div.container:after,
+.clear:after{
+  content: '';
+  display: block;
+  clear: both;
+}

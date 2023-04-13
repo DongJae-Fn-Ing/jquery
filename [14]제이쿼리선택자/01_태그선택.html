@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>태그선택</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+    $(function(){
+      $("p").css("background-color","gold"); //p는 묶여있어서 바디에서 다 불러온다. 
+      //css(속성)  css(속성, 값) 여기서 하나만 쓰면 getter 가지고 와라  뒤에 속성값까지 지정을 하면 setter 지정을 하라
+    });
+  </script>
+</head>
+<body>
+  <h2>p 태그 선택</h2>
+  <hr>
+  <div class="bg">h4.bg</div>
+  <p class="bg">p.bg</p>
+  <p class="bg">p#bg</p>
+</body>
+</html>

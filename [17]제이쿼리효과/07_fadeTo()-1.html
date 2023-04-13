@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fadeTo</title>
+  <style>
+  .box{
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    margin: 10px;
+    display: none;
+  }
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+
+      $("#f100").click(function(){
+        $(".box").fadeTo(1000, 1);
+      });
+      $("#f50").click(function(){
+        $(".box").fadeTo(1000, 0.5); //중간 값을 만드는 것
+      });
+      $("#f0").click(function(){
+        $(".box").fadeTo(1000, 0);
+      });
+      //.fadeTo(시간 불투명도)
+    })
+  </script>
+</head>
+<body>
+  <button id="f100">100%</button>
+  <button id="f50">50%</button>
+  <button id="f0">0%</button>
+  <hr>
+  <div class="clear">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animate</title>
+  <style>
+    /* 여기부터 이해를 해야한다 */
+    #frame{width: 400px; height: 300px;}
+    .wrap{width: 800px; height: 100%; margin: 0;}
+    .wrap img{ width: 400px; float: left;}
+    #frame{overflow: hidden;}
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+
+      var w = $("img").width(); //너비를 가져오는 매소드
+
+      $(".wrap img:first-child").click(function(){
+        $(".wrap").stop().animate({marginLeft: -w}, 1000, "linear"); // easing 가속속성 == linear 
+      }); //마이너스로 갔던 것을
+      // stop 매소드는 이전 애니메이션을 멈추는 용도 이게 없으면 중간에 멈출 수가 없다. 화면에 오류가 발생 할 수도 있다 없으면 ㅠㅠ 애니메이트 앞에 99% 같이 쓴다고 생각해라!!!!
+      $(".wrap img:last-child").click(function(){
+        $(".wrap").stop().animate({marginLeft: 0}, 1000, "linear"); //제자리
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="frame">
+    <div class="wrap">
+      <img src="http://wooreeweb.com/img/s05.jpg" alt="">
+      <img src="http://wooreeweb.com/img/s07.jpg" alt="">
+    </div>
+  </div>
+  <hr>
+  <button>위 이미지 클릭</button>
+</body>
+</html>

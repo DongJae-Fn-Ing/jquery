@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masonry 플러그인</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- Masonry 플러그인(부속) 추가 -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js'></script>
+  <script>
+    //f1키 cdnjs 메이슨리
+    $(function () {
+      $('.container').masonry({
+        itemSelector: '.item', //누구를 정렬할 거니
+        columnWidth: 100 //열너비는 100씩적용
+      });
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body * {
+      box-sizing: border-box;
+    }
+
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .item {
+      width: 100px;
+      height: 100px;
+      background-color: deeppink;
+      float: left;
+      border: 1px solid #222;
+      border-radius: 5px;
+    }
+  </style>
+  <style>
+    .w-2 {
+      width: 200px;
+    }
+
+    .w-3 {
+      width: 300px;
+    }
+
+    .w-4 {
+      width: 400px;
+    }
+
+    .h-2 {
+      height: 200px;
+    }
+
+    .h-3 {
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .container>.item{$}*50 -->
+  <div class="container clearfix">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item w-2 h-2">3</div>
+    <div class="item">4</div>
+    <div class="item w-3">5</div>
+    <div class="item">6</div>
+    <div class="item w-2">7</div>
+    <div class="item h-3">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+    <div class="item w-2">11</div>
+    <div class="item">12</div>
+    <div class="item w-3">13</div>
+    <div class="item">14</div>
+    <div class="item">15</div>
+    <div class="item">16</div>
+    <div class="item">17</div>
+    <div class="item">18</div>
+    <div class="item w-4">19</div>
+    <div class="item">20</div>
+    <div class="item">21</div>
+    <div class="item">22</div>
+    <div class="item">23</div>
+    <div class="item w-4">24</div>
+    <div class="item">25</div>
+    <div class="item h-3">26</div>
+    <div class="item">27</div>
+    <div class="item">28</div>
+    <div class="item">29</div>
+    <div class="item w-3 h-2">30</div>
+    <div class="item">31</div>
+    <div class="item h-3">32</div>
+    <div class="item">33</div>
+    <div class="item">34</div>
+    <div class="item">35</div>
+    <div class="item w-4">36</div>
+    <div class="item">37</div>
+    <div class="item">38</div>
+    <div class="item h-3">39</div>
+    <div class="item">40</div>
+    <div class="item">41</div>
+    <div class="item">42</div>
+    <div class="item">43</div>
+    <div class="item w-4">44</div>
+    <div class="item">45</div>
+    <div class="item">46</div>
+    <div class="item">47</div>
+    <div class="item w-3">48</div>
+    <div class="item">49</div>
+    <div class="item">50</div>
+  </div>
+</body>
+
+</html>

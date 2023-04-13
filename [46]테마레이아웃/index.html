@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테마 레이아웃</title>
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script src="js/custom.js"></script>
+</head>
+
+<body>
+  <!-- 전체 프레임 -->
+  <div id="wrap">
+
+    <!-- 전체 구름 화면 -->
+    <img src="images/cloud1.png" alt="">
+    <img src="images/cloud2.png" alt="">
+
+    <!-- 로고 -->
+    <div id="logo"></div>
+
+    <!-- 주메뉴 -->
+    <ul id="gnb">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Company</a></li>
+      <li><a href="#">History</a></li>
+      <li><a href="#">Community</a></li>
+      <li><a href="#">Contact us</a></li>
+    </ul>
+
+    <!-- sns -->
+    <ul id="sns">
+      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+    </ul>
+
+    <!-- 텍스트 박스 -->
+    <div class="slogan">
+      <p><strong>Lorem</strong>Ipusm</p>
+      <em>Lorem Ipsum is simply dummy text of the printing Materials</em>
+    </div>
+
+    <!-- 모바일 프레임 -->
+    <figure>
+      <p>
+        <!-- 시계 -->
+        <span>00</span> : <span>00</span> : <span>00</span>
+        <!-- 모바일 화면 구름 -->
+        <img src="images/cloud1.png" class="cl1">
+        <img src="images/cloud2.png" class="cl2">
+      </p>
+    </figure>
+
+    <!-- 테마 변경 메뉴 -->
+    <nav>
+      <ul>
+        <li class="on"><a href="#">morning</a></li>
+        <li><a href="#">afternoon</a></li>
+        <li><a href="#">evening</a></li>
+        <li><a href="#">night</a></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+
+</html>

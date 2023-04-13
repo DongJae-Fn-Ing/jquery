@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>backstretch.js</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- backstretch.js 추가 -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js'>
+    </script>  
+    <script>
+      $(function () {
+        $.backstretch([ //배경이지는 배열 형태로 배치
+          'http://wooreeweb.com/img/bg-1.jpg', //인덱스0
+          'http://wooreeweb.com/img/bg-2.jpg', 
+          'http://wooreeweb.com/img/bg-3.jpg',
+          'http://wooreeweb.com/img/bg-4.jpg' //인덱스 3까지 순환을 한다.
+        ], { //추가 옵션이 더 필요할 경우
+          fade: 800,
+          duration: 6000
+        });
+        /* 
+        $.backstretch( [ 
+        '이미지1', '이미지2', '이미지3', ..., '이미지n' 
+        ], { 
+        fade: 시간(ms), duration: 시간(ms) 
+        } ); 
+        */
+      });
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

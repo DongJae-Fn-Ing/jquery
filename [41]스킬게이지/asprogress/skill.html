@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>스킬게이지</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="js/jquery-asProgress.js"></script>
+  <link rel="stylesheet" href="css/asProgress.css">
+  <style>
+    body {
+      padding: 40px;
+    }
+
+    .row {
+      display: flex;
+      width: 100%;
+    }
+
+    .row .col1 {
+      display: inline-flex;
+    }
+
+    .row .col1 {
+      flex: 1 4 0;
+    }
+
+    .row .progress {
+      flex: 4 1 0;
+    }
+
+    #page-2 {
+      padding-top: 200px;
+      padding-bottom: 200px;
+    }
+  </style>
+  <script>
+    $(function () {
+      //초기화 
+      $('.progress').asProgress({
+        namespace: 'progress'
+          //, bootstrap: false  //부트스트랩 프레임 워크
+          //, min: 0 
+          //, max: 100 
+          //, goal: 100 
+          ,
+        speed: 30 // speed of 1/100 
+          ,
+        easing: 'ease',
+        labelCallback: function labelCallback(n) {
+          var percentage = this.getPercentage(n);//getPercentage? 
+          return percentage + '%'; 
+        }
+      });
+      //지정 위치에 스크롤이 도착하면 동작 
+      $(window).scroll(function () {
+        //페이지 변수/ 
+        var $page1 = $('#page-1');
+        var $page2 = $('#page-2');
+        var $page3 = $('#page-3');
+        //1페이지 높이 
+        var p1ht = $page1.height();
+        //브라우저의 스크롤 
+        var bt = $(this).scrollTop();
+        //위치를 계산하고 1페이지 높이보다 크면 시작 
+        if (bt > p1ht) {
+          $('.progress').asProgress('start');
+        } //asProgress('start'); 시작
+        //3페이지 시작(스크롤 위치)보다 크면 초기화 
+        if (bt > $page3.offset().top) {
+          $('.progress').asProgress('reset');
+        } //초기화 해라
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!--IE8이하에서 작동하는 조건부 주석-->
+  <!--[if lt IE 8]> 
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> 
+  <![endif]-->
+  <!--#page-1-->
+  <div class="page" id="page-1" style="height:1000px;background:#ddd;">
+    1페이지
+  </div>
+  <!--/#page-1-->
+  <!--#page-2-->
+  <div class="page" id="page-2">
+    <h2>가로형 스킬 게이지(progress bar)</h2>
+    <div class="prog-wrap">
+      <div class="row">
+        <div class="col1">Photoshop</div>
+        <div class="progress" role="progressbar" data-goal="30"> 
+          <!-- role == 역활속성 상태바 -->
+          <div class="progress__bar"><span class="progress__label"></span></div>
+        </div>
+      </div>
+      <!--/.row-->
+      <div class="row">
+        <div class="col1">Illustrator</div>
+        <div class="progress" role="progressbar" data-goal="50">
+          <div class="progress__bar"> <span class="progress__label"></span> </div>
+        </div>
+      </div>
+      <!--/.row-->
+      <div class="row">
+        <div class="col1">Dreamwever</div>
+        <div class="progress progress--success" role="progressbar" data-goal="80">
+          <div class="progress__bar"></div>
+        </div>
+      </div>
+      <!--/.row-->
+      <div class="row">
+        <div class="col1">HTML</div>
+        <div class="progress progress--alert" role="progressbar" data-goal="70">
+          <div class="progress__bar"><span class="progress__label"></span></div>
+        </div>
+      </div>
+      <!--/.row-->
+      <div class="row">
+        <div class="col1">CSS</div>
+        <div class="progress progress--round" role="progressbar" data-goal="90">
+          <div class="progress__bar"><span class="progress__label"></span></div>
+        </div>
+      </div>
+      <!--/.row-->
+      <div class="row">
+        <div class="col1">Javascript</div>
+        <div class="progress progress--radius progress--success" role="progressbar" data-goal="85">
+          <div class="progress__bar"></div>
+        </div>
+      </div>
+      <!--/.row-->
+      <div class="row">
+        <div class="col1">jQuery</div>
+        <div class="progress progress--round progress-alert" role="progressbar" data-goal="95">
+          <div class="progress__bar"><span class="progress__label"></span></div>
+        </div>
+      </div>
+      <!--/.row-->
+    </div>
+    <!--/.prog-wrap-->
+  </div>
+  <!--/#page-2-->
+  <!--#page-3-->
+  <div class="page" id="page-3" style="height:1000px;background:#ddd;"> 3페이지
+  </div>
+  <!--/#page-3--> 
+  <!-- 디자인 포트폴리오 -->
+</body>
+
+</html>

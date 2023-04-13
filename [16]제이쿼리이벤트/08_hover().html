@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hover</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+
+  //hover(function(){},function(){}))
+  //토글과 같이 펀셩 펀셩 두개를 쓴다.
+  $("p").hover(function(){
+    $(this).text("OVER").css("font-weight", "bold");},
+    function(){
+    $(this).text("OUT").css({
+      backgroundColor: "crimson",
+      color : "white"
+    });
+    //hover()== .mouseenter() + mouseleave()
+  });
+});
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.hover()</h2>
+  <hr>
+  <p class="pa">p.pa</p>
+  <p id="pa">p#pa</p>
+  <p class="pb">p.pb</p>
+  <hr>
+  <button>위 요소에 마우스 호버</button>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배경색상 변경</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    //디자인 템플릿에 많이 쓴다
+    $(function () {
+      $('html, body').mousemove(function (e) { //마우스무브가 발생을 하면 이벤트객체 e가 발생
+        var $win = $(window); //브라우저 
+        var col = 3; //열 개수 
+        var cw = $win.width() / 3; //열의 너비 
+        var $body = $('body');
+        if (cw > e.pageX) {
+          $body.removeClass(); //바디에 있는 기존의 클래스를 지워라
+          $body.addClass('bgc1'); //클래스 추가
+        } else if (cw * 2 > e.pageX) {
+          $body.removeClass();
+          $body.addClass('bgc2');
+        } else {
+          $body.removeClass();
+          $body.addClass('bgc3');
+        }
+      });
+    });
+  </script>
+  <style>
+    body {
+      background-color: ivory;
+      transition: all 0.6s;
+    }
+
+    body.bgc1 {
+      background-color: palevioletred;
+    }
+
+    body.bgc2 {
+      background-color: dodgerblue;
+    }
+
+    body.bgc3 {
+      background-color: greenyellow;
+    }
+  </style>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+  color: #bbb;
+}
+
+img {
+  border: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+.clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 배경이미지 설정 */
+.wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  min-width: 1400px;
+  min-height: 768px;
+  /* 이거 체크 */
+  background: url('../images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+
+/* 로고 영역 */
+#logo {
+  position: fixed;
+  width: 300px;
+  top: 240px;
+  left: 0px;
+  text-align: center;
+  line-height: 0.8;
+}
+
+#logo strong {
+  font: bold 16px/1.1 verdana;
+  /* 폰트 폰트사이즈 라인하이트 폰트패밀리 >> 단축표기법 */
+  color: #333;
+}
+
+#logo img {
+  width: 200px;
+  height: auto;
+}
+
+#logo span {
+  font: bold 12px/1.6 arial;
+  color: #444;
+  letter-spacing: 5px;
+}
+
+/* 슬로건 영역 */
+.txt {
+  position: fixed;
+  top: 400px;
+  left: 40px;
+  /* 로고와 대칭을 위해 */
+  font: 30px/0.8 Raleway;
+  color: #111;
+  /* letter-spacing: 0px; */
+}
+
+.txt span {
+  font-size: 30px;
+  color: #888;
+}
+
+/* 웹 아이콘 버튼 모음 */
+.sns {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  z-index: 100;
+}
+
+.sns li {
+  float: left;
+  margin-left: 30px;
+}
+
+.sns li a {
+  color: #555;
+  font-size: 22px;
+}
+
+/* contents 영역 레이아웃 */
+.contents{
+  position: fixed;
+  top: 0px;
+  right: 0px; 
+  /* 오른쪽 기준 */
+  width: 100%;
+  height: 100%;
+}
+
+.nav-con{
+  position: relative;
+  width: 12%;
+  /* 전체 높이의 48%를 사용 */
+  height: 100%;
+  background: url('../images/divider.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  float: right;
+  overflow: hidden;
+}
+
+/* .nav-con제목 */
+.nav-con h2{
+  position: absolute;
+  top: 300px;
+  left: 20px;
+  padding-left: 5px;
+  border-left: 3px solid #555;
+  font: bold 20px Raleway; 
+  color: #666;
+  z-index: 30;
+  transition: all 0.5s;
+}
+
+.nav-con div{
+  position: absolute;
+  left: 0px;
+  top: 300px;
+  width: 100%;
+  height: 0;
+  background: #000;
+  opacity: 0.5;
+  z-index: 20;
+  transition: all 0.5s;
+}
+
+/* .nav-con 제목 호버효과 */
+.nav-con:hover h2{
+  color: #ccc;
+  border-left: 3px solid #ccc;
+}
+.nav-con:hover div{
+  top: 270px;
+  /* 탑의 위치를 바꿔주고 높이를 바꿔주면 호버시 중앙에서 퍼지는 효과를 준다 */
+  height: 70px;
+}
+
+/* .nav-con 동영상 */
+.nav-con video{
+  position: absolute;
+  width: auto;
+  /* 오토로 준 이유 기본 너비를 높이를 기준으로 만들거기 때문에 */
+  height: 100%;
+  margin-top: 0;
+  margin-left: -100px;
+  opacity: 0;
+  z-index: 10;
+}
+
+/* .nav-con 숨겨진 콘텐츠 */
+.nav-con h3{
+  position: absolute;
+  bottom: 210px;
+  right: -310px;
+  /* 오른쪽으로 내보냄 */
+  font: 40px Raleway;
+  color: #fff;
+  text-align: right;
+  opacity: 1;
+  z-index: 40;
+}
+.nav-con p{
+  position: absolute;
+  bottom: 50px;
+  right: -310px;
+  width: 300px;
+  height: 150px;
+  font: 12px/1.5 arial;
+  color: #fff;
+  text-align: right;
+  opacity: 0.8;
+  z-index: 50;
+}
+
+/* footer*/
+footer{
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  left: 0px;
+  bottom: 0px;
+  background: #000;
+  font: 12px/3.3 verdana;
+  color: #fff;
+  letter-spacing: 2px;
+  opacity: 0.4;
+  z-index: 100;
+}
+
+footer ul{
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+}
+footer ul li{
+  float: left;
+  margin-right: 40px;
+}
+footer span{
+  position: absolute;
+  right: 50px;
+  bottom: 0px;
+}

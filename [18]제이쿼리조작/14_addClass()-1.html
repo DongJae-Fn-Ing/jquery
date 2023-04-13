@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=!, initial-scale=1.0">
+  <title>addClass()-1</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+
+  $(".box").addClass("pink"); //선택자에 클래스 속성을 찾아서 클래스 속성 값을 추가한다.
+});
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.addClass()</h2>
+  <hr>
+  <div class="clear">
+    <div class="box"><strong>1</strong></div> <!-- pink가 붙은 상태 -->
+    <div class="box">2</div><!-- pink가 붙은 상태 -->
+    <div class="box">3</div><!-- pink가 붙은 상태 -->
+  </div>
+</body>
+</html>

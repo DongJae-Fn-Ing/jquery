@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=!, initial-scale=1.0">
+  <title>insertBrefore - insertAfter</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+
+  $(".box:last").insertBefore(".box:first");//선택자를 기준으로  뒤 괄호 앞에
+  $(".box:nth-child(2)").insertAfter(".box:last"); // 위에가 실행후 선택자를 기준으로 뒤로 
+  $
+});
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.insertbefore() / .insertafter()</h2>
+  <hr>
+  <div class="clear">
+    <div class="box"><strong>1</strong></div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>

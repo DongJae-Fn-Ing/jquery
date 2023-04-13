@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=!, initial-scale=1.0">
+  <title>removeClass</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+
+  $(".box").removeClass("box"); //선택자의 클래스 명이 박스인 것을 지운다
+});
+//리무브 클래스 이용해서 지우면 값만 사라짐 값이 없는 상태로 남아있다.
+//.index() 해당 선택자의 인덱스 번호를 가져와라
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.removeClass()</h2>
+  <hr>
+  <div class="clear">
+    <div><strong>1</strong></div>
+    <div class="box pink">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>

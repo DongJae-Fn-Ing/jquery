@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>click</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+
+      $("a").click(function(){
+        $("img").attr("src", "http://wooreeweb.com/img/h02.jpg")
+      });
+      //정상작동
+    });
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<p><img src="http://wooreeweb.com/img/h01.jpg"></p>
+<h2><a href="javascript:void(0)">클릭</a></h2> <!-- void(0) == 리턴하지말아라  구버전 방식--> 
+</body>
+</html>

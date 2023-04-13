@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>퀵메뉴와 탑버튼</title>
+  <!-- CSS 연결 -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/quickNav.css">
+  <link rel="stylesheet" href="css/topbtn.css">
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+   <!-- js 연결 -->
+  <script src="js/quick.js"></script>
+  <script src="js/topbt.js"></script>
+</head>
+<!-- 원페이지 레이아웃 형식  == spa -->
+<body>
+  <!-- 퀵메뉴 -->
+  <ul id="qm">
+    <!-- (li>a[href=#page$]{메뉴$})*4 -->
+    <li><a href="#page1">메뉴1</a></li>
+    <li><a href="#page2">메뉴2</a></li>
+    <li><a href="#page3">메뉴3</a></li>
+    <li><a href="#page4">메뉴4</a></li>
+  </ul>
+  <!-- 컨텐츠 -->
+  <div class="contents">
+    <!-- #page${CONTENT-$}*4 -->
+    <div id="page1">CONTENT-1</div>
+    <div id="page2">CONTENT-2</div>
+    <div id="page3">CONTENT-3</div>
+    <div id="page4">CONTENT-4</div>
+  </div>
+  <!-- TOP 버튼 -->
+  <div id="top">TOP</div>
+</body>
+
+</html>

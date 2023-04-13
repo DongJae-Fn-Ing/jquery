@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>원</title>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="js/progressbar.min.js"></script>
+  <style>
+    #circleBox {
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+  <script>
+    $(function () {
+      var bar = new ProgressBar.Circle(circleBox, { //Circle
+        strokeWidth: 6,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: null
+      });
+      bar.animate(1.0); // 0.0(0%)~1.0(100%) 
+    });
+  </script>
+</head>
+
+<body>
+  <div id="circleBox"></div>
+</body>
+
+</html>

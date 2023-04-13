@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팬시박스</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <style>
+    a > img{width: 100px;} 
+  </style>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>
+    $(function(){
+      //기본형
+      //$(".gal a").fancybox();
+
+      //옵션지정
+      $("a.ibox").fancybox({
+        "transitionIN" : "elastic",
+        "transitionOut" : "elastic",
+        "cyclic" :true,
+        "overlayColor" : "#ffff00"
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>라이트박스</h2>
+    <hr>
+
+    <div class="gal">
+      <a href="http://wooreeweb.com/img/s01.jpg" data-lightbox="g1" class="ibox">
+        <img src="http://wooreeweb.com/img/s01.jpg" alt="">
+      </a>
+      <a href="http://wooreeweb.com/img/s02.jpg" data-lightbox="g1" class="ibox">
+        <img src="http://wooreeweb.com/img/s02.jpg" alt="">
+        <a href="http://wooreeweb.com/img/s03.jpg" data-lightbox="g1" class="ibox">
+          <img src="http://wooreeweb.com/img/s03.jpg" alt="">
+      </a>
+    </div>
+  </div>
+</body>
+</html>

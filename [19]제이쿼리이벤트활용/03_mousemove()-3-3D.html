@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지시퀀스</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    //3d플러그인을 찾아봐
+    $(function () {
+      var $fr = $('#frame'); //프레임을 변수로 만든다
+      var $img = $fr.find('img'); //프레임 안에서 이미지를 찾아라 
+      var frw = $fr.width(); //프레임 너비(width)를 변수에 저장
+      var frhw = frw / 2; //프레임 너비의 1/2 
+      var imgCnt = 90; //이미지 개수 - 1  실제 캡쳐 이미지에서 1~2장 뺀다 안빼면 빈공간 발생
+      $fr.on('mousemove resize', function (e) {
+        var ww = $(window).width(); //브라우저 너비 계산후 변수에 저장
+        var startX = ww / 2 - frhw; //프레임 시작 X좌표 스타트 지역을 잡는다. 브라우저 절반으로 나누고 현재 프레임을 절반으로 나눈 만큼을 빼주면 시작위치가 된다. 
+        var endX = startX + frw; // 시작위치에서 프레임의 너비를 더해주면 종료 위치이다.
+        var n = Math.ceil(imgCnt / frw * (e.pageX - startX) + 1); //이미지의 갯수만큼 배열을 해준다.
+        //프레임 안에서
+        console.log('■ n = ' + n);
+        $img.attr('src', 'images/pig/' + n + '.jpg');
+      });
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #111;
+    }
+
+    #frame {
+      width: 550px;
+      height: 400px;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="frame">
+    <img src="images/pig/1.jpg" alt="">
+  </div>
+</body>
+
+</html>

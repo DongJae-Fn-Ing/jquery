@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fadeIn</title>
+  <style>
+  .box{
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    margin: 10px;
+    display: none;
+    float: left;
+  }
+  .clear:after{content: ''; display: block; clear: both;}
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+
+      $("button").click(function(){
+        $(".box:hidden:first").fadeIn(1000);// :히든 숨겨져있는
+        //히든 같은 필터는 숨겨진 것을 순차적으로 나오게 한다.
+      });
+    });
+  </script>
+</head>
+<body>
+  <button>.show()</button>
+  <hr>
+  <div class="clear">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>

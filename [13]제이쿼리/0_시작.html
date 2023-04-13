@@ -1,0 +1,92 @@
+<!-- http://jquery.com -->
+<!-- 제이쿼리는 자바스크립트 라이브러리 자바스크립트 기능들을 모아서 메소드 형태로 만들어 놓은 것 
+(라이브러리란? 단어 자체는 도서관)
+ 
+특징 문장구조 단순
+한국에서는 환영
+
+제이쿼리를 많이 쓰면 속도가 느려진다 == 스파게티 코드
+
+다운로드에서 받아 쓰는 버전
+
+컴프레스드(압축) 버젼  - 버전 뒤에 min.js가 붙는다
+
+언컴프레스트 버젼  -  .js로 끝난다
+
+둘다 실질적으로 안씀
+
+
+CDN방식으로 쓴다 -- 서버에 부하를 줄일 수 있음
+Using jQuery with a CDN 문단에서
+
+https://developers.google.com/speed/libraries#jquery  구글 버전 
+https://docs.microsoft.com/en-us/aspnet/ajax/cdn/overview#jQuery_Releases_on_the_CDN_0 ms버전
+https://cdnjs.com/libraries/jquery cdnjs 버전
+https://www.jsdelivr.com/package/npm/jquery jsdekuver
+암거나 써라
+
+
+버전 특성에 따라 호환이 엄청 다르다
+용도에 따라 버전을 다르게 쓴다.
+
+2번과 3번버전 (혼합에서 쓴다)
+
+1버전
+
+메이저 버전 jquery 3.6.0 
+
+마이너 버전
+
+
+
+
+linkjQuery Migrate Plugin 하위버전 호환시키기
+
+
+
+API Documentation 학습은 여기 탭에서
+j
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- jQuery 단축키 jq -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- 연습은 1버전 -->
+  <!-- 옛날 라이브러리에 1버전 기능이 많아 많이 쓴다. -->
+  <!-- 버전 여러개 쓰지 말아라 이중 하나만 쓸 것 하나의 html은 한개 버전에 제이쿼리만 쓰는 것을 원칙 -->
+  <!-- 제이쿼리는 항상 먼저써라 이런식으로 순서가 바뀌면 작동을 한다.-->
+  <script>
+
+    /* $("선택자").attribute;  선택자를 가져와라
+    $("선택자").method(); */ //(모두)선택자를 가져와서 지정하라
+    //위에 두방식이 제이쿼리 기본 작동법
+    
+    //원래버전
+    /* $(document).ready(function(){
+      $("div").hide(); //숨기기
+    }); //온로드방식 바디를 먼저 읽게 한다. */
+    
+    //요약버전
+    $(function(){
+      $("div").hide(); //숨기기
+    }); //온로드방식 바디를 먼저 읽게 한다.
+  </script>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <style>
+    div{ width: 100px; height: 100px; background-color: brown;}
+  </style>
+  
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>focus()_blur()</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $("input").focus(function(){ //포커스 커서가 들어오면
+        $(this).css("background-color", "gold");
+        $(this).attr("placeholder", "focus()");
+      });
+      $("input").blur(function(){ // 불러 커사가 나가면
+        $(this).css("background-color", "white");
+        $(this).attr("placeholder", "blur()");
+      });
+    })
+    // 양식이나 서식을 만들 때 자주 사용한다.
+    //.find() 자손중에 ()안의 태그를 찾아라
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.focus() /.blur()</h2>
+  <hr>
+  선택1 : <input type="text" placeholder="blur()">
+  <br>
+  선택2 : <input type="text" placeholder="blur()">
+  <hr>
+  <button>위 input 영역안에 마우스 커서 넣기</button>
+</body>
+</html>

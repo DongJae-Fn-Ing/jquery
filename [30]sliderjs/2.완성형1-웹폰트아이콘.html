@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>slideJS</title>
+  <meta name="viewport" content="width=device-width">
+  <!--웹폰트 아이콘 추가-->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--스타일 완성-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    body {
+      color: #333;
+      font: normal 15px/1.4 'Malgun Gothic';
+      padding-top: 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #slides .slidesjs-navigation {
+      margin-top: 3px;
+    }
+
+    #slides .slidesjs-previous,
+    #slides .slidesjs-next {
+      margin-right: 5px;
+      float: left;
+    }
+
+    .slidesjs-pagination {
+      margin-top: 6px;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 2px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      background-image: url(http://wooreeweb.com/img/dot.png);
+      width: 13px;
+      height: 13px;
+      color: transparent;
+      /*활성화시 색상 보임*/
+      height: 0;
+      padding-top: 13px;
+      overflow: hidden;
+      background-position: 0 0;
+      float: left;
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px;
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333;
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #a22;
+    }
+
+    /*텍스트 내비게이션*/
+    .navbar {
+      overflow: hidden;
+    }
+  </style>
+  <style>
+    .container {
+      margin: 0 auto;
+    }
+
+    /* 로딩시 깜빡거림 제거 */
+    #slides {
+      display: none;
+    }
+
+    /*페이지네이션 활성화시 색상 변경*/
+    .slidesjs-pagination .active {
+      color: crimson;
+    }
+  </style>
+  <style>
+    /* 
+  반응형 미디어쿼리   
+  */
+    /*태블릿 또는 화면 큰 스마트폰*/
+    @media (max-width: 767px) {
+      body {
+        padding: 0;
+      }
+
+      .container {
+        width: auto;
+      }
+    }
+
+    /*스마트폰*/
+    @media (max-width: 480px) {
+      .container {
+        width: auto;
+      }
+    }
+
+    /*랩탑*/
+    @media (min-width: 768px) and (max-width: 979px) {
+      .container {
+        width: 720px;
+      }
+    }
+
+    /*데스크탑*/
+    @media (min-width: 1200px) {
+      .container {
+        width: 1180px;
+      }
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="js/jquery.slides.min.js"></script>
+  <script>
+    $(function () {
+      $('#slides').slidesjs({
+        width: 900,
+        height: 600,
+        navigation: false, //기존 네비게이션 안씀
+        play: {
+          active: true,
+          auto: true,
+          interval: 5000,
+          swap: true
+
+
+          //터치 디바이스 적용
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="slides">
+      <img src="http://wooreeweb.com/img/h01.jpg" alt="">
+      <img src="http://wooreeweb.com/img/h02.jpg" alt="">
+      <img src="http://wooreeweb.com/img/h03.jpg" alt="">
+      <img src="http://wooreeweb.com/img/h04.jpg" alt="">
+      <!--내비게이션-->
+      <a href="#" class="slidesjs-previous slidesjs-navigation"> <i class="fa fa-chevron-left fa-lg"></i>
+        <!-- 덮어써서 만든다 -->
+      </a>
+      <a href="#" class="slidesjs-next slidesjs-navigation">
+        <i class="fa fa-chevron-right fa-lg"></i>
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>

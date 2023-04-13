@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>first()- last()</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+$(function(){
+  $(".box").first().css({ // 모든 박스를 가져오고 첫번째 값을 가져와라
+    backgroundColor: "red"
+  });
+  $(".box").last().css({// 모든 박스를 가져오고 마지막 값을 가져와라
+    backgroundColor: "red"
+  });
+});
+  </script>
+</head>
+<body>
+<h2>.first()/.last()</h2>
+<hr>
+
+  <div class="clear">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+  </div>
+</body>
+</html>

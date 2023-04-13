@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>접속 확인 메인</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script>
+    var filter = 'win16|win32|win64|mac|macintel'; //pc os
+    //필터링을 통해서 플래폼의 값을 가지고
+
+    if (navigator.platform) {
+      if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {//소문자 변환
+        //데스크 탑이 아닌게 참
+        location.href = 'm/'; //모바일 페이지가 있는 경로 
+      } else {
+        location.href = 'd/'; //데스크탑 페이지가 있는 경로 
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h2>최초 접속시 접속 경로를 확인하는 페이지</h2>
+</body>
+
+</html>

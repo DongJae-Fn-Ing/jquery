@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>스크롤 매직</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		section {
+			position: relative;
+			height: 100vh;
+			z-index: 8888;
+		}
+
+		.panel {
+			width: 100%;
+			height: 100%;
+		}
+
+		.sblue {
+			background-color: skyblue;
+		}
+
+		.turq {
+			background-color: turquoise;
+		}
+
+		.lgreen {
+			background-color: lightgreen;
+		}
+
+		.lpink {
+			background-color: lightpink;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.j s"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.add Indicators.min.js"></script>
+	<style>
+		svg {
+			width: 800px;
+			height: 550px;
+		}
+	</style>
+	<!--트윈맥스 플러그인 추가-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<!--스크롤매직 애니메이션 추가-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation .gsap.min.js"></script>
+	<script>
+		$(function () {
+					//초기화 
+					var controller = new ScrollMagic.Controller({
+						globalSceneOptions: {
+							triggerHook: 'onLeave'
+						}
+					});
+					//모든 페이지(슬라이드) 가져오기 
+					var slides = document.querySelectorAll("section.panel");
+					//반복문을 이용하여 페이지 슬라이드 제어 
+					for (var i = 0; i < slides.length; i++) {
+						new ScrollMagic
+							.Scene({
+								triggerElement: slides[i]
+							})
+							.setPin(slides[i])
+							.addTo(controller); //.addIndicators()
+						//여기부터 재작성!!! 
+						function pathPrepare($el) {
+							var linelength = $el[0].getTotalLength();
+							$el.css('stroke-dasharray', linelength);
+							$el.css('stroke-dashoffset', linelength);
+						}
+						//path 변수 지정 
+						var $line = $('path#line');
+						//svg 준비 
+						pathPrepare($line);
+						//모션 트위닝 
+						var tween = new TimelineMax()
+							.add(TweenMax.to($line, 0.3, {
+								strokeDashoffset: 0,
+								ease: Linear.easeNone
+							}))
+							.add(TweenMax.to('path', 0.8, {
+								stroke: '#ffffff',
+								ease: Linear.easeNone
+							}));
+
+
+
+							//특정 영역에서 그림을 그려주는 역활
+						var scene = new ScrollMagic
+							.Scene({
+								triggerElement: '#trigger',
+								duration: 100,
+								tweenChanges: true
+							})
+							.setTween(tween)
+							.addTo(controller);
+					});
+	</script>
+</head>
+
+<body>
+	<!--(section.panel.blue>h1{$})*4-->
+	<section class="panel sblue">
+		<h1>1페이지</h1>
+		<div>
+			<svg>
+				<path id="line" style="stroke-linecap: round; stroke-linejoin: round;" fill="none" stroke="#33629c"
+					stroke-width="5"
+					d="M96,253c0,0,10-11,81-11c0,0,11,13,96,0c0,0,76-12,131,38c0,0,131,74,229,52c0,0,85-22,131-13" />
+			</svg>
+		</div>
+	</section>
+	<section class="panel turq">
+		<h1>2페이지</h1>
+	</section>
+	<section class="panel lgreen">
+		<h1>3페이지</h1>
+	</section>
+	<section class="panel lpink">
+		<h1>4페이지</h1>
+	</section>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>click</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+<script>
+  //배너이미지 이미지 슬라이드에 기본
+$(function(){
+  var n = 0; // 이미지 시작번호
+  var count = 4; // 이미지 개수
+
+  $("img").click(function(){
+    n++;
+    n = n % count;
+    $(this).attr("src", "http://wooreeweb.com/img/h0" + n + ".jpg");//이미지 1번부터~~
+  });
+});
+//클릭은 기본 이벤트가 걸려있는 html 태그를 조심해라
+//특히 a태그
+</script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div>
+<img src="http://wooreeweb.com/img/h00.jpg" alt="">
+</div>
+
+<hr>
+<button>위 이미지 클릭</button>
+</body>
+</html>

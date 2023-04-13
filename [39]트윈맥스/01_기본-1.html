@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트윈맥스</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: #f0f;
+      opacity: 0;
+    }
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+  <script>
+    $(function () {
+      $('body').html('<div>');
+      var bo = $('div');
+      TweenMax.to(bo, 5, {//최종적으로 해라
+        opacity: 1
+      });
+      /*********************************************************** 
+      .to( 대상객체, 시간, 변경할 속성 ) 
+      -대상객체 : 애니메이션을 적용할 대상(선택자 또는 변수 객체) 
+      -시간 : 애니메이션 진행 시간(단위: 초) 
+      -변경할 속성 : 애니메이션이 적용될 속성 
+      ***********************************************************/
+    });
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+#gnb{
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 25px; left: 0;
+  z-index: 1000;
+}
+
+#gnb dl{
+  width: 25%;
+  float: left;
+  padding: 0 20px;
+}
+
+/* 1차 */
+#gnb dl dt{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 2차 */
+#gnb dl dd{
+  border-bottom: 1px solid #ccc;
+}
+#gnb dl dd a{
+  display: block;
+  padding: 8px 0;
+}
+
+/* 닫기 */
+#close{
+  position: absolute;
+  top: 5px; right: 5px;
+}
+
+/* 메뉴효과 */
+#gnb dl dd a:hover,
+#gnb dl dd a:focus, /* 탭키로 이동했을 때 */
+#gnb dl dd a:active{
+  background-color: #f00;
+  color: #fff;
+}
+
+/* 메뉴 숨기기 */
+#gnb{
+  background-color: #fff;
+  display: none;
+}
+
+/* 전체 메뉴 버튼 */
+#navBtn{
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  background-color: #f00;
+  color: #fff;
+  font-weight: bold;
+  width: 130px;
+  text-align: center;
+}

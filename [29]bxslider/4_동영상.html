@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bxSlider</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- bxSlider 추가 -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js'></script>
+  <script>
+    $(function () {
+      $('.slide').bxSlider({
+        captions: true, //슬라이드 캡션 
+        mode: 'horizontal', //슬라이드 형태('horizontal', 'vertical', 'fade') 
+        auto: false, //자동 슬라이드 
+        autoControls: false, //재생관련 컨트롤 
+        slideWidth: 800, //슬라이드 너비 
+        speed: 600, //슬라이드 트랜지션 시간(500) 
+        infiniteLoop: true, //무한 반복 여부        
+        autoHover: true, //호버시 슬라이드 중지 
+        minSlides: 1, //최소 이미지 개수 
+        maxSlides: 1, //최대 이미지 개수 
+        shrinkItems: true, //뷰포트에 맞추어 슬라이드 줄이기 
+        video: true, //fitvids.js 추가시 동영상 슬라이드 사용 가능 
+      });
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/vendor/jquery.fitvids.js'></script>
+  동영상 플러그인
+  <style>
+    .cap {
+      position: absolute;
+      left: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mainSlide">
+    <ul class="slide">
+      <li>
+        <div class="cap">
+          <h2>캡션 삽입</h2>
+        </div>
+        <video autoplay muted loop>
+          <source src="http://wooreeweb.com/media/movie.mp4">
+        </video>
+      </li>
+      <li>
+        <iframe width="1280" height="720"
+          src="https://www.youtube.com/embed/w70vFImnszQ?list=PLqqCO_hbZgsoz10q1nmPXoXS_rg0EMim0&autoplay =1"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+      <li>
+        <img src="http://wooreeweb.com/img/bg-3.jpg" alt="" title="이미지캡션3">
+      </li>
+      <li>
+        <img src="http://wooreeweb.com/img/bg-4.jpg" alt="" title="이미지캡션4">
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

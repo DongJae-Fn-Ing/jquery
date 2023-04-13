@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>add</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script src="http://wooreeweb.com/cdn/prevent.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+$(function(){
+  $(".box").css({ 
+    backgroundColor: "red"
+  })
+  .add(".clear") //앞에 있는 것을 버리지 말고 부모 영역을 다시 배정을 하여 css를 다시 적용을 한다.
+  .css("border", "5px solid black");
+});
+//위에 방식으로 매소드를 연결시킬 수 있다 이 방식을 매소드 체인 
+  </script>
+</head>
+<body>
+<h2>.add(':clear')</h2>
+<hr>
+
+  <div class="clear">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+  </div>
+</body>
+</html>

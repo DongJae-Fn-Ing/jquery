@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>원</title>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="js/progressbar.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+  <style>
+    #circleBox {
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      position: relative;
+      /*텍스트 추가시*/
+    }
+  </style>
+  <script>
+    $(function () {
+      var bar = new ProgressBar.Circle(circleBox, {
+        color: '#aaa',
+        strokeWidth: 4,
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        text: {
+          autoStyleContainer: false  //내가 직접 적용시킬 것이다.
+        },
+        from: {
+          color: '#aaa',
+          width: 1
+        },
+        to: {
+          color: '#333',
+          width: 4
+        },
+        step: function (state, circle) {
+          circle.path.setAttribute('stroke', state.color);
+          circle.path.setAttribute('stroke-width', state.width);
+          var value = Math.round(circle.value() * 100);
+          if (value === 0) {
+            circle.setText('');
+          } else {
+            circle.setText(value);
+          }
+        }
+      });
+      bar.text.style.fontFamily = 'Raleway, sans-serif';
+      bar.text.style.fontSize = '2rem';
+      bar.animate(1.0); // 0.0(0%)~1.0(100%) 
+    });
+  </script>
+</head>
+
+<body>
+  <div id="circleBox"></div>
+</body>
+
+</html>

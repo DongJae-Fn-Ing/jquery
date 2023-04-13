@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>slideJS</title>
+  <meta name="viewport" content="width=device-width">
+  <style>
+    .container {
+      margin: 0 auto;
+    }
+
+    /* 로딩시 깜빡거림 제거 */
+    #slides {
+      display: none;
+    }
+
+    /*페이지네이션 활성화시 색상 변경*/
+    .slidesjs-pagination .active {
+      color: crimson;
+    }
+  </style>
+  <style>
+    /* 
+반응형 미디어쿼리   
+*/
+    /*태블릿 또는 화면 큰 스마트폰*/
+    @media (max-width: 767px) {
+      body {
+        padding: 0;
+      }
+
+      .container {
+        width: auto;
+      }
+    }
+
+    /*스마트폰*/
+    @media (max-width: 480px) {
+      .container {
+        width: auto;
+      }
+    }
+
+    /*랩탑*/
+    @media (min-width: 768px) and (max-width: 979px) {
+      .container {
+        width: 720px;
+      }
+    }
+
+    /*데스크탑*/
+    @media (min-width: 1200px) {
+      .container {
+        width: 1180px;
+      }
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="js/jquery.slides.min.js"></script>
+  <script>
+    $(function () {
+      $('#slides').slidesjs({
+        width: 300,
+        height: 200
+        //커스터마이징이 필요하다
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="slides">
+      <img src="http://placehold.it/300x200" alt="">
+      <img src="http://placehold.it/300x200" alt="">
+      <img src="http://placehold.it/300x200" alt="">
+      <img src="http://placehold.it/300x200" alt="">
+    </div>
+  </div>
+</body>
+
+</html>

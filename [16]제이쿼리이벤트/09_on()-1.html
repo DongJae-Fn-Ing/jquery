@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>on</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+<script>
+  $(function(){
+    //.on ("이벤트명", function(){실행문});
+    $("p").on("click", function(){ //메소드 안에 이름이 들어가고 함수가 들어간다. 왜 쓰나면 두개 이상의 이벤트를 발생을 했을 때 하나로 묶어서 작동을 시키고 싶어서 쓴다.
+      $(this).css("background-color","crimson");
+    });
+  });
+</script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.dblclick()</h2>
+  <hr>
+  <p class="pa">p.pa</p>
+  <p id="pa">p#pa</p>
+  <p class="pb">p.pb</p>
+  <hr>
+  <button>위 요소 클릭</button>
+</body>
+</html>

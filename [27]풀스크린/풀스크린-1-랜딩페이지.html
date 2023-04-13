@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>풀스크린 랜딩페이지-js</title>
+  <!-- 웹 폰트 아이콘 - Font Awesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- 웹 폰트 -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Oleo+Script+Swash+Caps&display=swap"
+    rel="stylesheet">
+  <script>
+    // 랜딩 페이지 페이지 실행시 시작을 알려주는 페이지
+    //브라우저가 크던 작던 반응형으로 만들어준다.
+    $(function () {
+      var ww, wh, bh; //변수 선언
+
+      function init() { //init() 이니셜라이즈 초기화 함수를 만들 때 이름을 쓴다.
+        ww = window.innerWidth; //브라우저 너비 자바스크립트식 계산
+        wh = window.innerHeight; //브라우저 높이 자바스크립트식 계산
+        bh = document.getElementById('big'); //배경이미지 영역 js식 선택자
+        bh.style.height = wh + 'px';
+      }
+      init();//호출
+      // 브라우저 크기가 변경되는 것을 감지하는 이벤트 리스너 
+      function el() {
+        window.addEventListener('resize', init); //리사이즈 강제 
+      }
+      el(); //한번 더
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    html {
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: 'noto sans kr';
+    }
+
+    body * {
+      box-sizing: border-box;
+    }
+
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    body {
+      background-color: #fff;
+      color: #222;
+    }
+
+    section {
+      background-color: beige;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      background-color: ivory;
+      padding: 3rem 1rem;
+    }
+
+    /* 헤더 */
+    .header {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 5rem;
+      line-height: 1;
+    }
+
+    .header h1 span {
+      display: block;
+      font-size: 1.4rem;
+      color: #aaa;
+      line-height: 1.5;
+      padding: 1rem 0;
+    }
+
+    /* 상단 내비게이션(.top-gnb) */
+    .top-gnb {
+      text-align: right;
+      padding: 0.5rem 0;
+      font-size: 0.8rem;
+    }
+
+    .top-gnb a {
+      display: inline-block;
+      padding: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    /* 내비게이션(.gnb) */
+    .gnb {
+      font-size: 1.2rem;
+      padding-top: 1rem;
+    }
+
+    .gnb a {
+      display: inline-block;
+      margin: 0.4rem 0.1rem;
+      padding: 0.5rem 1.2rem;
+      letter-spacing: 1px;
+      border: 2px solid transparent;
+      border-radius: 2px;
+    }
+
+    .gnb a:hover,
+    .gnb a:focus {
+      background-color: #333;
+    }
+
+    .gnb a.on {
+      background-color: #eee;
+      border-color: #222;
+    }
+
+    /* 컨텐츠 */
+    .contents {
+      padding: 10rem 0;
+    }
+
+    .contents p {
+      font-size: 1.5rem;
+    }
+
+    .contents>a {
+      display: inline-block;
+      margin: 20px 10px;
+      padding: 25px;
+    }
+
+    .contents>a>img {
+      max-width: 100%;
+      border-radius: 10px;
+      opacity: 0.5;
+    }
+
+    .contents>a>strong {
+      display: block;
+      font-size: 1.3rem;
+    }
+
+    .contents>a:hover img,
+    .contents>a:focus img {
+      opacity: 1;
+    }
+  </style>
+  <style>
+    /* 풀스크린 배경 */
+    .big-header {
+      position: relative;
+      background-color: #333;
+      height: 700px;
+    }
+
+    .big-header {
+      background-image: url(http://wooreeweb.com/img/bigbg.jpg);
+      background-position: center bottom;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .main-title {
+      position: absolute;
+      color: #fff;
+      text-align: center;
+      font-size: 7rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-family: 'Oleo Script Swash Caps';
+    }
+
+    .main-title:before {
+      content: '';
+      background-image: url(http://wooreeweb.com/img/deco.svg);
+      /* svg로 저장을 하면 확대 축소를 해도 사진이 파괴되지 않는다. */
+      width: 20vw;
+      height: 20vh;
+      min-width: 3.5rem;
+      min-height: 3.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-title {
+        font-size: 3rem;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- 배경+헤더 -->
+    <div class="content">
+      <!-- (1) 배경이미지: 풀스크린 -->
+      <div id="big" class="big-header">
+        <div class="main-title">Landing</div>
+      </div>
+      <!-- (2) 상단 내비게이션 -->
+      <div class="top-gnb clearfix">
+        <a href="#"><i class="fa fa-globe"></i><span>사이트맵</span></a>
+        <a href="#"><i class="fa fa-user-circle"></i><span>로그인</span></a> </div>
+      <!-- (3) 페이지 헤더(메인 내비게이션) -->
+      <div class="header clearfix">
+        <h1>HEADER <span>페이지 헤더</span></h1>
+      </div>
+      <nav class="gnb">
+        <a href="#" class="on">메뉴1</a>
+        <a href="#">메뉴2</a>
+        <a href="#">메뉴3</a>
+        <a href="#">메뉴4</a>
+      </nav>
+    </div>
+    <!-- 컨텐츠 -->
+    <section class="contents">
+      <p>컨텐츠</p>
+      <a href="#">
+        <img src="http://placehold.it/300x200" alt="">
+        <strong>컨텐츠1</strong>
+      </a>
+      <a href="#">
+        <img src="http://placehold.it/300x200" alt="">
+        <strong>컨텐츠2</strong>
+      </a>
+    </section>
+    <!-- 푸터 -->
+    <footer>
+      &copy; 2013 WOOREEWEB
+    </footer>
+  </div>
+</body>
+
+</html>

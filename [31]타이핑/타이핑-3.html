@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,	initial-scale=1.0">
+  <title>타이핑 효과</title>
+  <!--	jQuery	-->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function () {
+      var $txt = $('.t-text');
+      var speed = 100; //글자가	나오는	속도(ms) 
+      function typing(s, n) {
+        if (n < s.length) {
+          $txt.html(s.substring(0, n + 1));
+          n++;
+          setTimeout(function () {
+            typing(s, n)
+          }, speed);
+        }
+      }
+      $txt.show();
+      var t = $txt.data('text'); //data-	속성에	작성된	텍스트	컨테츠 
+      $('.start').click(function () {
+        typing(t, 0);
+      });
+    });
+  </script>
+  <style>
+    .t-text {
+      border: 1px solid gray;
+      margin: 100px;
+      padding: 10px;
+      text-align: justify;
+      display: none;
+    }
+
+    .start {
+      width: 80px;
+      height: 30px;
+      border: 1px solid;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <p class="start">시작</p>
+    <div class="t-text"
+      data-text="Lorem	ipsum	dolor,	sit	amet	consectetur	adipisicing	elit.	Officia	quas,	dolorum,	ea	explicabo	doloribus	assumenda	unde	quo	consectetur	necessitatibus	pariatur	suscipit	corporis	quidem	laudantium	aliquam	quasi	nisi!	Pariatur,	eligendi	iusto!">
+      '시작' 버튼을 클릭하세요!</div>
+  </div>
+</body>
+
+</html>

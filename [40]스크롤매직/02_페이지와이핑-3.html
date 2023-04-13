@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>스크롤매직</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    section {
+      height: 100vh;
+      position: relative;
+      z-index: 8888;
+    }
+
+    .panel {
+      height: 100%;
+      width: 100%;
+    }
+
+    .sblue {
+      background-color: skyblue;
+    }
+
+    .turq {
+      background-color: turquoise;
+    }
+
+    .lgreen {
+      background-color: lightgreen;
+    }
+
+    .lpink {
+      background-color: lightpink;
+    }
+
+    svg {
+      width: 800px;
+      height: 550px;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  <script>
+    $(function () {
+      // 초기화 
+      var controller = new ScrollMagic.Controller({
+        globalSceneOptions: {
+          triggerHook: 'onLeave'
+        }
+      });
+      // 모든 페이지(슬라이드) 가져오기 
+      var slides = document.querySelectorAll('section.panel');
+      // 반복문으로 각 페이지 장면(씬) 생성 
+      for (var i = 0; i < slides.length; i++) {
+        new ScrollMagic
+          .Scene({
+            triggerElement: slides[i]
+          })
+          .setPin(slides[i]).addTo(controller);
+      }
+
+      function pathPrepare($el) {
+        var linelength = $el[0].getTotalLength();
+        $el.css('stroke-dasharray', linelength);
+        $el.css('stroke-dashoffset', linelength);
+      }
+      //path 변수 지정 
+      var $line = $('path#line');
+      //SVG 준비 
+      pathPrepare($line);
+      //스크롤매직 플러그인 초기화 
+      //var controller = new ScrollMagic.Controller(); //트위닝 애니메이션 
+      var tween = new TimelineMax()
+        .add(TweenMax.to($line, 0.3, {
+          strokeDashoffset: 0,
+          ease: Linear.easeNone
+        }))
+        .add(TweenMax.to('path', 0.8, {
+          stroke: '#ffffff',
+          ease: Linear.easeNone
+        }), 0);
+      // 장면(씬) 생성 
+      var scene = new ScrollMagic
+        .Scene({
+          triggerElement: "#trigger",
+          duration: 100,
+          tweenChanges: true
+        })
+        .setTween(tween)
+        .addTo(controller);
+    });
+  </script>
+  <script>
+    //너비 높이를 만들꺼야
+    $(function () {
+      function fit() {
+        var win = $(window);
+        var h = win.height;
+        var w = win.width;
+        var panel = $('.panel');
+        panel.height(h);
+        panel.width(w);
+      }
+      fit();
+      $(window).resize(fit());
+    });
+  </script>
+</head>
+
+<body>
+  <section class="panel sblue">
+    <h1>1페이지</h1>
+  </section>
+  <section class="panel turq">
+    <h1>2페이지</h1>
+  </section>
+
+  <section class="panel lgreen" id="trigger">
+    <h1>3페이지 - 모션 시작</h1>
+    <div>
+      <svg>
+        <path id="line" style="stroke-linecap: round; stroke-linejoin: round;" fill="none" stroke="#33629c"
+          stroke-width="5"
+          d="M96,253c0,0,10-11,81-11c0,0,11,13,96,0c0,0,76-12,131,38c0,0,131,74,229,52c0,0,85-22,131-13" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="panel lpink">
+    <h1>4페이지</h1>
+  </section>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개별선택</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+    /*     $(function(){
+      $(".box").click(function(){ //클래스 박스를 찾아서 클릭 이벤트를 주고
+        $(this).css("background-color", "gold");//this를 감싸고 있는 가장 가까운 펀션을 찾는다.
+        //펀션은 앞에 객체를 찾는다. 그 객체가 this
+        // 클래스 이름이 박스 중 클릭한 것만 
+        
+      });
+    }); */
+    $(function () {
+      var clk = 0;
+      $(".box").click(function () {
+        if (clk == 0) {
+          $(this).css("background-color", "gold");
+        } else {
+          $(this).css("background-color", "white");
+        }
+        clk++;
+      });
+    });
+    //필터선택자 따로 공부
+    //:eq()
+    //:lt()
+    //:gt()
+    //:not()
+  </script>
+</head>
+
+<body>
+  <h2>클릭한 .box 요소 선택</h2>
+  <hr>
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+  <div class="box">4</div>
+  <div class="box">5</div>
+  <div class="box">6</div>
+  <div class="box">7</div>
+  <div class="box">8</div>
+  <hr>
+</body>
+
+</html>

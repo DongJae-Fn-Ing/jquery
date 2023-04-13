@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가로 스크롤</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- mousewheel 플러그인 추가 -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+  <script>
+    $(function () {
+      $('html, body').mousewheel(function (e, d) {
+        this.scrollLeft -= (d * 100); //델타값 x 100
+        e.preventDefault(); //스크롤 다운 방지 
+      });
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body * {
+      box-sizing: border-box;
+    }
+
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .page {
+      float: left;
+      width: 25%;
+    }
+
+    .page img {
+      width: 100%;
+    }
+
+    .wrap {
+      width: 400%;
+      height: 100%;
+      overflow-y: hidden;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap clearfix">
+    <div class="page page1">
+      <img src="http://wooreeweb.com/img/bg-1.jpg" alt="">
+    </div>
+    <div class="page page2">
+      <img src="http://wooreeweb.com/img/bg-2.jpg" alt="">
+    </div>
+    <div class="page page3">
+      <img src="http://wooreeweb.com/img/bg-3.jpg" alt="">
+    </div>
+    <div class="page page4">
+      <img src="http://wooreeweb.com/img/bg-4.jpg" alt="">
+    </div>
+  </div>
+</body>
+
+</html>

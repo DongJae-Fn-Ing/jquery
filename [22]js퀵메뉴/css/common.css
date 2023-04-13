@@ -1,0 +1,80 @@
+/* css/common.css */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  outline: none; /* 익스플로어용 익스플로어에 이미지 테두리가 나오는 경우가 발생*/
+}
+
+html {
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;  /* 래티나 디스플레이 대응 또려한 글씨 */
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 전체 영역 */
+.wrap {
+  position: relative;
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* 컨텐츠 영역 */
+.container {
+  background-color: #eee;
+  color: #333;
+  padding: 300px;
+}
+
+/* 컨텐츠 */
+.contents div {
+  height: 1000px; /* 높이 강제부여 */
+  font-size: 10rem;
+  text-align: center;
+  line-height: 1000px;
+  color: #fff;
+}
+
+#page1 {
+  background-color: deepskyblue;
+}
+
+#page2 {
+  background-color: yellowgreen;
+}
+
+#page3 {
+  background-color: cornflowerblue;
+}
+
+#page4 {
+  background-color: indianred;
+}
+
+#page1 {
+  background-image: url(http://wooreeweb.com/img/bg-4.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

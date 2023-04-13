@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>resize()</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function () {
+      var $win = $(window); //브라우저 
+      function boxSize() {
+        var ww = $win.width(); //브라우저 너비 
+        console.log('현재 브라우저의 너비 : ' + ww);
+        var bs = ww / 2; //브라우저 너비의 50% 
+        console.log('현재 브라우저 너비의 50% : ' + bs);
+        // $( '.box2' ).css( 'width', bs ); 
+        $('.box2').stop().animate({
+          width: bs
+        }, 1000);
+      }
+      boxSize(); //함수 호출 
+      $win.resize(function () {
+        // boxSize() 
+        var timer = setTimeout(boxSize, 3000);//내가 지정한 시간이후에 한번만 실행
+        //3초 기다렸다 실행 실행시점의 차이
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="box1">width: 50%</div>
+  <div class="box2">.resize()</div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      position: relative;
+      height: 200px;
+      margin: 100px auto;
+      text-align: center;
+      line-height: 200px;
+      font-size: 2em;
+    }
+
+    .box1 {
+      width: 50%;
+      border: 1px solid yellowgreen;
+    }
+
+    .box2 {
+      border: 1px solid crimson;
+    }
+  </style>
+</body>
+
+</html>

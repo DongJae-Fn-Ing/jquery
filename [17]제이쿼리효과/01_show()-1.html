@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>show</title>
+  <style>
+    /* css 파트에서 display 속성을 가지고 통제를 한다 제이쿼리 이펙트는 */
+  .box{
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    margin: 10px;
+    display: none;
+  }
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+
+      $('button').click(function(){
+        $('.box').show(); //.show();는 display none에서 display block  상태로 만들어준다.
+      });
+      // show(시간)
+      //시간: "fast 0.2", "normal 0.4", "slow" 0.6, 숫자(ms 단위) 입력 1초는 ==1000
+      //좌측 상단 부터 점점 크게 나온다 시간 값을 주면
+    });
+  </script>
+</head>
+<body>
+  <button>.show()</button>
+  <hr>
+  <div class="clear">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

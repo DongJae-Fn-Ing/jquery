@@ -1,0 +1,74 @@
+header{
+  position: relative;
+  height: 30px;
+}
+
+#headerWrap{
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 고정 너비 내비게이션 */
+#head{
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* 1차메뉴 */
+#gnb{position: relative;}
+#gnb > li{
+  width: 20%;
+  height: 30px;
+  float: left;
+  text-align: center;
+  display: table;
+}
+#gnb > li > a{
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
+  transition: all 0.4s;
+}
+#gnb > li > a:hover,
+#gnb > li > a:focus,
+#gnb > li > a.on{
+  background-color: #09f; color: #fff;
+}
+
+/* 2차메뉴 */
+
+#gnb > li > ul{
+background-color: #fff;
+padding: 5px;
+position: absolute;
+left: 0;
+top: 30px;
+width: 120px;
+}
+
+/* 2차메뉴 배치 */
+#gnb li.nav1 ul{left: 0;}
+#gnb li.nav2 ul{left: 20%;}
+#gnb li.nav3 ul{left: 40%;}
+#gnb li.nav4 ul{left: 60%;}
+#gnb li.nav5 ul{left: 80%;}
+
+#gnb > li > ul > li{ padding: 0 10px;}
+#gnb > li > ul > li > a{
+  display: block;
+  padding: 8px 0;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+#gnb > li > ul > li > a:hover,
+#gnb > li > ul > li > a:focus{color: #09f;}
+
+#gnb > li > ul.on{
+  background-color: #ddd;
+}

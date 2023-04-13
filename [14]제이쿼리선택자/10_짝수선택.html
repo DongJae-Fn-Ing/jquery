@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>짝수선택</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <script>
+    $(function(){
+      $(".box:even").css("background-color","gold"); //:even 인덱스 짝수를 칭한다.
+    });
+  </script>
+</head>
+<body>
+  <h2>.box 중에서 짝수(:even) 요소만 선택(INDEX 기준)</h2>
+  <hr>
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<div class="box">4</div>
+<div class="box">5</div>
+<div class="box">6</div>
+<div class="box">7</div>
+<div class="box">8</div>
+</body>
+</html>

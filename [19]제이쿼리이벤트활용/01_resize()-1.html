@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>resize</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+      var $win = $(window);//브라우저 선택자중에서 윈도우라는 객체를 win에저장
+
+      function boxSize(){ //함수정의
+        var ww = $win.width();//너비를 구해서 저장
+        console.log("현재 브라우저의 너비 : " + ww);
+
+        var bs = ww/2;//부라우저 넓이의 저장
+        console.log("현재 브라우저의 너비의 50% :" + bs);
+
+        //$("box2").css("width",bs);
+        $(".box2").stop().animate({ width: bs },1000);
+      }
+      boxSize();//함수호출
+
+      $win.resize(function(){boxSize()}); //resize 화면의 크기가 변경이 되면 박스 사이즈를 한번 더 호출을 한다. 이게 없으면 내가 조정을 했어도 화면을 따라오지 않는다.
+    });
+  </script>
+</head>
+<body>
+  <div class="box1">width : 50%</div>
+  <div class="box2">.resize()</div>
+  <style>
+    *{margin: 0; pad: 0;}
+    div{
+      position: relative;
+      height: 200px;
+      margin: 100px auto;
+      text-align: center;
+      line-height: 200px;
+      font-size: 2em;
+    }
+    .box1{width: 50%; border: 1px solid yellowgreen;}
+    .box2{border: 1px solid crimson;}
+  </style>
+</body>
+</html>

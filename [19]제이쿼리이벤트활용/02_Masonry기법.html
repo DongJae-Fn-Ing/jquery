@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masonry 기법</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    //제이쿼리플러그인은 항상 제이쿼리 밑에 작성을 해준다
+    $(function () {
+      var $win = $(window);
+//masony 플러그인  구글에서 검색 
+      function masonry() { //함수정의
+        var col; //열(GRID) 
+        var space = 10; //여백 
+        var ww = $win.width(); //브라우저 너비 
+        console.log('----TEST----');//콘솔로 한번 찍어보고
+        console.log('■ 브라우저 너비 : ' + ww);
+        // 브라우저 너비에 따라 col 의 값을 변경시키는 제어문 
+        if (ww > 1600) {
+          col = 10;
+        } else if (ww > 1200) {
+          col = 8;
+        } else if (ww > 800) {
+          col = 4;
+        } else if (ww > 400) {
+          col = 2;
+        } else {
+          col = 1;
+        }
+        console.log('■ col = ' + col);
+
+        var $box = $('div.box');
+        var size = (ww - (space * col + space)) / col; //박스 크기 console.log('■ size = ' + size); 
+        //하나의 박스의 너비를 구하는 방법
+        // 박스 크기 적용 
+        $box.width(size);
+        $box.height(size);
+        // 박스를 하나씩 배치 
+        $box.each(function () {//배치하라
+          var idx = $(this).index(); //.box의 INDEX 
+          var colIdx = idx % col; //.box의 열 번호 
+          var rowIdx = Math.floor(idx / col); //.box의 행 번호 
+          console.log('---[ idx ' + idx + ' ]---');
+          console.log('★ 열 번호 : ' + colIdx);
+          console.log('★ 행 번호 : ' + rowIdx);
+          // 박스 배치 
+          var left = (colIdx * size) + (colIdx * space) + space;
+          var top = (rowIdx * size) + (rowIdx * space) + space;
+          console.log('★ LEFT : ' + left);
+          console.log('★ TOP : ' + top);
+          // (1) 바로 나열 
+          // $( this ).css( { left: left, top: top } ); 
+          // (2) 애니메이션 
+          $(this).stop().animate({
+            left: left,
+            top: top,
+            lineHeight: size + 'px'
+          });
+        });
+      }
+      masonry();
+      // 브라우저 크기 변경시 함수 재호출 
+      $win.resize(function () {
+        masonry()
+      });
+    });
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      position: relative;
+    }
+
+    .wrap>div {
+      width: 100px;
+      height: 100px;
+      background-color: deepskyblue;
+      text-align: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 2em;
+      overflow: hidden;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+    <div class="box">16</div>
+    <div class="box">17</div>
+    <div class="box">18</div>
+    <div class="box">19</div>
+    <div class="box">20</div>
+    <div class="box">21</div>
+    <div class="box">22</div>
+    <div class="box">23</div>
+    <div class="box">24</div>
+    <div class="box">25</div>
+    <div class="box">26</div>
+    <div class="box">27</div>
+    <div class="box">28</div>
+    <div class="box">29</div>
+    <div class="box">30</div>
+    <div class="box">31</div>
+    <div class="box">32</div>
+    <div class="box">33</div>
+    <div class="box">34</div>
+    <div class="box">35</div>
+    <div class="box">36</div>
+    <div class="box">37</div>
+    <div class="box">38</div>
+    <div class="box">39</div>
+    <div class="box">40</div>
+    <div class="box">41</div>
+    <div class="box">42</div>
+    <div class="box">43</div>
+    <div class="box">44</div>
+    <div class="box">45</div>
+    <div class="box">46</div>
+    <div class="box">47</div>
+    <div class="box">48</div>
+    <div class="box">49</div>
+    <div class="box">50</div>
+    <div class="box">51</div>
+    <div class="box">52</div>
+    <div class="box">53</div>
+    <div class="box">54</div>
+    <div class="box">55</div>
+    <div class="box">56</div>
+    <div class="box">57</div>
+    <div class="box">58</div>
+    <div class="box">59</div>
+    <div class="box">60</div>
+    <div class="box">61</div>
+    <div class="box">62</div>
+    <div class="box">63</div>
+    <div class="box">64</div>
+    <div class="box">65</div>
+    <div class="box">66</div>
+    <div class="box">67</div>
+    <div class="box">68</div>
+    <div class="box">69</div>
+    <div class="box">70</div>
+    <div class="box">71</div>
+    <div class="box">72</div>
+    <div class="box">73</div>
+    <div class="box">74</div>
+    <div class="box">75</div>
+    <div class="box">76</div>
+    <div class="box">77</div>
+    <div class="box">78</div>
+    <div class="box">79</div>
+    <div class="box">80</div>
+    <div class="box">81</div>
+    <div class="box">82</div>
+    <div class="box">83</div>
+    <div class="box">84</div>
+    <div class="box">85</div>
+    <div class="box">86</div>
+    <div class="box">87</div>
+    <div class="box">88</div>
+    <div class="box">89</div>
+    <div class="box">90</div>
+    <div class="box">91</div>
+    <div class="box">92</div>
+    <div class="box">93</div>
+    <div class="box">94</div>
+    <div class="box">95</div>
+    <div class="box">96</div>
+    <div class="box">97</div>
+    <div class="box">98</div>
+    <div class="box">99</div>
+    <div class="box">100</div>
+  </div>
+</body>
+
+</html>

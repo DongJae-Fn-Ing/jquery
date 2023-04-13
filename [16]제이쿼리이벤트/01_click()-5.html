@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>click</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+
+      $("a").click(function(e){
+        $("img").attr("src", "http://wooreeweb.com/img/h02.jpg")
+        e.preventDefault(); //기본 이벤트 방지 정말 요즘 최신 방식 중요
+      });
+      //기본 이벤트 방지
+    });
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<p><img src="http://wooreeweb.com/img/h01.jpg"></p>
+<h2><a href="#">클릭</a></h2>
+</body>
+</html>

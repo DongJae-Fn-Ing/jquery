@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>add</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+  $(".box").parent().css("border", "5px solid black"); //선택된 박스 선택하고 부모의 요소를 불러와
+  //css 바꾼다.   부모의 부모 값을 찾을 경우 .parent().parent() 식으로 써도 되지만 parents("조상들 중 선택자"와 이름)로 쓰는 것이 편하다.
+});
+  </script>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<h2>.parent()</h2>
+<hr>
+
+  <div class="clear">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+  </div>
+</body>
+</html>

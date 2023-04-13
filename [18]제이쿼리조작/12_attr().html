@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=!, initial-scale=1.0">
+  <title>attr</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+
+  $(".box").attr("class","pink");//선택자의 클래스 명을 핑크로 바꿈 
+});
+// 단일 클래스 때는 문제가 없지만 다중 클래스일 경우 문제가 많다.
+// .attr("속성명") 속성값으로 가져오기
+// .attr("속성명", "속성값") 속성값으로 지정하기
+  </script>
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <h2>.attr()</h2>
+  <hr>
+  <div class="clear">
+    <div class="box"><strong>1</strong></div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fadeIn</title>
+  <style>
+  .box{
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    margin: 10px;
+    display: none;
+  }
+  </style>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+    $(function(){
+      //기본 크기가 있으면서 색이 있는 사각형이 나온다 디스플레이도 블럭으로 변하면서 오퍼서티도 나온다
+      // fadeIn은 opacity 0에서 1로 변하는 것
+      $("button").click(function(){
+        $(".box").fadeIn(1000, function(){alert("display :" + $(this).css("display"));
+      });
+      });
+    });
+  </script>
+</head>
+<body>
+  <button>.show()</button>
+  <hr>
+  <div class="clear">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

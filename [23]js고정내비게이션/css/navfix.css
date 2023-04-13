@@ -1,0 +1,77 @@
+/* css/navfix.css */
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.header-top {
+  background-color: #eee;
+}
+
+.header-top img {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+#gnb {
+  height: 80px;
+}
+
+#gnb ul {
+  width: 980px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#gnb li {
+  float: left;
+  width: 25%;
+  background-color: #ddd;
+}
+
+#gnb a {
+  display: block;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
+
+.contents {
+  width: 980px;
+  background-color: #ddd;
+  margin: 0 auto;
+}
+
+#gnb ul.sticky li {
+  background-color: #111;
+}
+/* .sticky 태그에 스티키 클래스가 붙은 경우 -- 스크립트에서 기능구현 */
+#gnb ul.sticky a {
+  color: #fff;
+} 

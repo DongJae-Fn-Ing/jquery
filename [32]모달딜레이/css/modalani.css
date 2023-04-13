@@ -1,0 +1,10 @@
+/*	css/modalani.css	*/ 
+@keyframes	toBottom	{ 
+  0%	{	top:	-500px;	opacity:	0;	} 100%	{	top:	0;	opacity:	1;	} 
+  } 
+  .m-con	{ 
+  position:	relative; 
+  animation:	toBottom	0.6s; 
+  } 
+
+  /* 중요 */

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <script>
+$(function(){
+  $(".box").filter(":even").css({//필터 메소드 : 가져온 것을 걸러낸다. 애초에 골라낼때 처음에 가져올 때 인덱스 번호 짝수만 가져온다. 먼저 box 5개를 거져오고 필터랑 메소드를 통해 걸러낸다.
+    //중괄호를 이용한 자바스크립트 입력방식 이때는 속성에 묶음 표시 없고 그냥 css처럼 작성을 하고 
+    //연결되는 단어는 대문자로 해준다.
+    //여러개의 css를 적용시키기기 위해 쓴다.
+    backgroundColor: "red"
+  });
+});
+  </script>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<h2>.filter(':even')</h2>
+<hr>
+
+  <div class="clear">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bxSlider</title>
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+  <!-- bxSlider 추가 -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js'></script>
+  <script>
+    $(function () {
+      $('.slide').bxSlider({
+        captions: true //캡션 옵션을 넣어줌
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="mainSlide">
+    <ul class="slide">
+      <li>
+        <img src="http://wooreeweb.com/img/bg-1.jpg" alt="" title="이미지캡션1">
+      </li>
+      <li>
+        <img src="http://wooreeweb.com/img/bg-2.jpg" alt="" title="이미지캡션2">
+      </li>
+      <li>
+        <img src="http://wooreeweb.com/img/bg-3.jpg" alt="" title="이미지캡션3">
+      </li>
+      <li>
+        <img src="http://wooreeweb.com/img/bg-4.jpg" alt="" title="이미지캡션4">
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
